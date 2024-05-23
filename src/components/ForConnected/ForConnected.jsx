@@ -3,9 +3,9 @@ const ForConnected = () => {
   return (
     <div>
       <div
-        className="w-full bg-gray-400 py-20"
+        className="w-full bg-gray-400 py-5 lg:py-20"
         style={{
-          backgroundImage: "url('https://source.unsplash.com/random/640x480')",
+          backgroundImage: "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650abccdeb96e375819d913f_Rectangle%2070.png')",
           backgroundPosition: 'center center',
           backgroundBlendMode: 'multiply',
           backgroundSize: 'cover',
@@ -26,7 +26,7 @@ const ForConnected = () => {
             />
             <button
               type="button"
-              className="w-2/5 p-3 font-semibold rounded-r-lg sm:w-1/3 bg-violet-600 text-gray-50"
+              className="w-2/5 p-3 font-semibold rounded-r-lg sm:w-1/3 bg-primary text-gray-50"
             >
               Subscribe
             </button>

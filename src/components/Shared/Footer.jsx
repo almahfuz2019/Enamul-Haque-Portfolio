@@ -1,10 +1,10 @@
 import logo from "../../../public/Images/Footer Logo.png"
 const Footer = () => {
   return (
-    <footer className="footer footer-center py-20 bg-black text-white  rounded">
+    <footer className="footer footer-center py-20 bg-black text-white  ">
         <img className="h-28" src={logo} alt="" />
-        <h1 className="text-2xl mb-4">Proudly Serving</h1>
-      <div className="grid grid-cols-4 gap-10 text-2xl font-medium">
+        <h1 className="text-2xl mb-4 font-medium">Proudly Serving</h1>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-2xl font-medium">
         <div>
           Mississauga <br />
           Oakville <br />
@@ -32,56 +32,35 @@ const Footer = () => {
           Oshawa
         </div>
       </div>
-      <div className="border-2 border-x-0 w-1/2 border-y-2 py-10  border-white font-medium">
-        <h1 className="text-2xl mb-7">Contact Us</h1>
-        <div className="text-base">
+      <div className="border-2 border-x-0 w-full md:w-1/2 border-y-2 py-10  border-white font-medium">
+        <h1 className="text-2xl mb-6">Contact Us</h1>
+        <div className="text-base mb-4">
           <a href="tel:+1234567890">Phone: 416-742-8000</a> <br />
           <a href="mailto:example@example.com">enamulhaque@gmail.com</a>
         </div>
         <div className="grid grid-flow-col gap-4">
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-            </svg>
-          </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-            </svg>
-          </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-            </svg>
-          </a>
+         <a href="">
+          <img src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ac0683b726557b1c77b5e_Group%2018497%20(1).png" alt="" />
+         </a>
+         <a href="">
+          <img src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ac0607e17935cd2403be4_Group%2051%20(1).png" alt="" />
+         </a>
+         <a href="">
+          <img src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ac055b1b57e07c219c4cc_Group%2050%20(1).png" alt="" />
+         </a>
+         <a href="">
+          <img src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ac04af47cf01adfdd3e60_Group%2049%20(1).png" alt="" />
+         </a>
         </div>
-        <nav className="grid grid-flow-col gap-4 text-base">
+        <nav className="grid grid-flow-col gap-4 mt-4 text-base">
           <a className="link link-hover">Terms & Conditions</a>
           <a className="link link-hover">Carrer</a>
           <a className="link link-hover">Blog</a>
           <a className="link link-hover">Privacy Policy</a>
         </nav>
-        <nav></nav>
+       
       </div>
-      <aside className="flex gap-20 text-base">
+      <aside className="flex lg:gap-20 gap-5 -mt-6 text-base">
         <p>© copyright Enamul Haque 2024</p>
         <p>Powred by- TechPlato, inc.</p>
       </aside>

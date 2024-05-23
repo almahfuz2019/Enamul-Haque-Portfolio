@@ -6,14 +6,14 @@ import WhyChooseEnam from "../Shared/WhyChooseEnam";
 const AboutUs = () => {
   return (
     <div className=" mx-auto">
-      <div className="p-5 mx-auto ">
+      <div className=" mx-auto ">
         <div className="flex flex-col  mx-auto overflow-hidden ">
           <img
-            src="https://source.unsplash.com/random/480x360"
+            src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ade6846a18cefd3326e1c_Rectangle%2085.png"
             alt=""
-            className="w-full h-60 sm:h-96 "
+            className="w-full h-40 lg:h-96 "
           />
-          <div className="p-6 pb-12 m-4 mx-auto -mt-32 space-y-6  sm:px-10 sm:mx-12  bg-white">
+          <div className="lg:p-6  pb-12 m-4 mx-auto lg:-mt-32 space-y-6  sm:px-10 sm:mx-12  bg-white">
             <div className="space-y-2">
               <h1
                 rel="noopener noreferrer"

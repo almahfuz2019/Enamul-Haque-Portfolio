@@ -1,175 +1,217 @@
 import { useState } from "react";
 import logo from "../../../public/Images/Navbar Logo.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
   const navItemStyle = `text-xl tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400`;
   return (
-    <div className="px-4  mx-auto py-3 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div className="relative flex items-center justify-between lg:justify-center lg:space-x-16">
-        <ul className="flex items-center hidden space-x-8 lg:flex">
-          <li>
-            <NavLink
-              to="/"
-              aria-label="Our product"
-              title="Our product"
-              className={navItemStyle}
-            >
-              Product
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/"
-              aria-label="Our product"
-              title="Our product"
-              className={navItemStyle}
-            >
-              Features
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              aria-label="Product pricing"
-              title="Product pricing"
-              className={navItemStyle}
-            >
-              About Us
-            </NavLink>
-          </li>
-        </ul>
-        <NavLink
-          to="/"
-          aria-label="Company"
-          title="Company"
-          className="inline-flex items-center"
-        >
-          <img src={logo} alt="Enamul Haque Website Logo" />
-        </NavLink>
-        <ul className="flex items-center hidden space-x-8 lg:flex">
-          <li>
-            <NavLink
-              to="/blogs"
-              aria-label="blogs"
-              title="blogs"
-              className={navItemStyle}
-            >
-              Blogs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              aria-label="Contact Us"
-              title="Contact Us"
-              className={navItemStyle}
-            >
-              Contact Us
-            </NavLink>
-          </li>
-        </ul>
-        <div className="lg:hidden">
-          <button
-            aria-label="Open Menu"
-            title="Open Menu"
-            className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
-            onClick={() => setIsMenuOpen(true)}
+    <div>
+      <div className="bg-black py-3">
+    <div className="flex items-center justify-between container px-20">
+      <div>sfsafsfsdfssdffdf</div>
+      <div>
+      <Link to="" className="inline-black rounded-full px-5 py-1 border-2 border-white  text-md  text-white  hover:text-white  focus:ring ">Free Home Evalution</Link>
+      </div>
+      <div>
+        <p className="text-md text-white font-bold"> 416-742-8000</p>
+      </div>
+    </div>
+      </div>
+    <div className="container">
+      <div className="px-4  mx-auto py-3 md:block hidden">
+        <div className=" flex items-center justify-between lg:justify-center lg:space-x-16 ">
+          <ul className=" items-center hidden space-x-8 lg:flex">
+            <li>
+              <NavLink
+                to="/featuer/buy"
+                aria-label="Our product"
+                title="Our product"
+                className={navItemStyle}
+              >
+                Buy
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/featuer/pre-construction"
+                aria-label="Our product"
+                title="Our product"
+                className={navItemStyle}
+              >
+                Pre Construction
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/featuer/sell"
+                aria-label="Our product"
+                title="Our product"
+                className={navItemStyle}
+              >
+                Sell
+              </NavLink>
+            </li>
+            
+          </ul>
+          <NavLink
+            to="/"
+            aria-label="Company"
+            title="Company"
+            className="inline-flex items-center"
           >
-            <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-              />
-            </svg>
-          </button>
-          {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
-              <div className=" bg-white  rounded ">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <NavLink
-                      to="/"
-                      aria-label="Company"
-                      title="Company"
-                      className="inline-flex items-center"
-                    >
-                     <img src={logo} alt="Enamul Haque Website Logo" />
-                    </NavLink>
-                  </div>
-                  <div>
-                    <button
-                      aria-label="Close Menu"
-                      title="Close Menu"
-                      className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-                        <path
-                          fill="currentColor"
-                          d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <nav>
-                  <ul className="space-y-4">
-                    <li>
-                      <NavLink
-                        to="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className={navItemStyle}
-                      >
-                        Product
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        className={navItemStyle}
-                      >
-                        Features
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
-                        className={navItemStyle}
-                      >
-                        Pricing
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        to="/"
-                        aria-label="Contact Us"
-                        title="Contact Us"
-                        className={navItemStyle}
-                      >
-                        Contact Us
-                      </NavLink>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          )}
+            <img src={logo} alt="Enamul Haque Website Logo" />
+          </NavLink>
+          <ul className="flex items-center hidden space-x-8 lg:flex">
+          <li>
+              <NavLink
+                to="/about"
+                aria-label="Product pricing"
+                title="Product pricing"
+                className={navItemStyle}
+              >
+                About Us
+              </NavLink>
+            </li> <li>
+              <NavLink
+                to="/blogs"
+                aria-label="blogs"
+                title="blogs"
+                className={navItemStyle}
+              >
+                Blogs
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                aria-label="Contact Us"
+                title="Contact Us"
+                className={navItemStyle}
+              >
+                Contact Us
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </div>
+      {/* for Tab and phone  */}
+      <nav className="bg-white shadow md:hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex-shrink-0">
+              <NavLink
+                to="/"
+                className="flex items-center text-gray-800 font-bold"
+              >
+                Logow
+              </NavLink>
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-4">
+                <NavLink
+                  exact
+                  to="/"
+                  className="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                  activeClassName="bg-gray-100"
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  to="/about"
+                  className="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                  activeClassName="bg-gray-100"
+                >
+                  About
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  className="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                  activeClassName="bg-gray-100"
+                >
+                  Contact
+                </NavLink>
+              </div>
+            </div>
+            <div className="-mr-2 flex md:hidden">
+              <button
+                onClick={toggleNavbar}
+                type="button"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open main menu</span>
+                <svg
+                  className={`${isOpen ? "hidden" : "block"} h-6 w-6`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+                <svg
+                  className={`${isOpen ? "block" : "hidden"} h-6 w-6`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={`${isOpen ? "block" : "hidden"} md:hidden`}
+          id="mobile-menu"
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <NavLink
+              exact
+              to="/"
+              className="text-gray-800 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+              activeClassName="bg-gray-100"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="text-gray-800 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+              activeClassName="bg-gray-100"
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className="text-gray-800 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+              activeClassName="bg-gray-100"
+            >
+              Contact
+            </NavLink>
+          </div>
+        </div>
+      </nav>
+    </div>
     </div>
   );
 };

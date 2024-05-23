@@ -3,11 +3,11 @@ import React from "react";
 const FreeHomeValuation = () => {
   return (
     <div>
-      <div className=" mx-auto my-10 container mx-auto">
+      <div className="  my-10 container mx-auto px-5">
         <h1 className="text-4xl text-center  font-medium font-md">
           Considering a Sale or Purchase?
         </h1>
-        <p className="text-center mx-auto text-lg my-5 w-3/4">
+        <p className="text-center mx-auto text-lg my-5 lg:w-3/4">
           Whether you're contemplating a sale or purchase, your achievement is
           our top priority, especially in today's competitive market.
           Determining the right price for your property is crucial, and our
