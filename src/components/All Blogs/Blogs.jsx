@@ -5,7 +5,7 @@ const Services = () => {
     return (
         <>
        
-        <div className='container mx-auto md:py-10  lg:py-10 px-5'>
+        <div className='container mx-auto md:py-10  lg:py-10 px-4'>
             {/* <h1 className='text-center font-medium text-4xl mb-10'>Recent News & Blog</h1> */}
        <div className="services-list grid grid-cols-1   md:grid-cols-2 lg:grid-cols-3 gap-6">
       <Blog AllBlogs={AllBlogs}/>

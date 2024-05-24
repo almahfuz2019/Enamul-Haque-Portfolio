@@ -17,11 +17,11 @@ const ContactForm = () => {
           </div>
           <div className="mx-auto">
             <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-full lg:w-1/2 mt-5">
+              <div className="p-2 w-full lg:w-1/2 md:mt-5">
                 <div className="relative">
                   <label
                     htmlFor="name"
-                    className="leading-7 text-2xl text-white"
+                    className="leading-7 text-base md:text-2xl text-white"
                   >
                     First Name
                   </label>
@@ -33,11 +33,11 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="p-2 w-full lg:w-1/2 mt-5">
+              <div className="p-2 w-full lg:w-1/2 md:mt-5">
                 <div className="relative">
                   <label
                     htmlFor="name"
-                    className="leading-7 text-2xl text-white"
+                    className="leading-7 text-base md:text-2xl text-white"
                   >
                     Last Name
                   </label>
@@ -49,11 +49,11 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="p-2 w-full lg:w-1/2 mt-5">
+              <div className="p-2 w-full lg:w-1/2 md:mt-5">
                 <div className="relative">
                   <label
                     htmlFor="name"
-                    className="leading-7 text-2xl text-white"
+                    className="leading-7 text-base md:text-2xl text-white"
                   >
                     Phone Number
                   </label>
@@ -65,11 +65,11 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="p-2 w-full lg:w-1/2 mt-5">
+              <div className="p-2 w-full lg:w-1/2 md:mt-5">
                 <div className="relative">
                   <label
                     htmlFor="name"
-                    className="leading-7 text-2xl text-white"
+                    className="leading-7 text-base md:text-2xl text-white"
                   >
                     Email
                   </label>
@@ -83,7 +83,7 @@ const ContactForm = () => {
               </div>
 
               <div className="mb-4 mt-4">
-                <span className="block text-white text-2xl">
+                <span className="block text-white text-base md:text-2xl">
                   Are you interested in
                 </span>
                 <div className="mt-2">
@@ -93,7 +93,9 @@ const ContactForm = () => {
                       name="radio-1"
                       className="radio radio-primary form-radio border-white"
                     />
-                    <span className="ml-2 text-2xl font-bold">Buying</span>
+                    <span className="ml-2 text-base md:text-2xl font-bold ">
+                      Buying
+                    </span>
                   </label>
                   <label className="inline-flex items-center ml-6">
                     <input
@@ -101,7 +103,9 @@ const ContactForm = () => {
                       name="radio-1"
                       className="radio radio-primary form-radio border-white"
                     />
-                    <span className="ml-2 text-2xl font-bold">Selling</span>
+                    <span className="ml-2 text-base md:text-2xl font-bold ">
+                      Selling
+                    </span>
                   </label>
                   <label className="inline-flex items-center ml-6">
                     <input
@@ -109,7 +113,9 @@ const ContactForm = () => {
                       name="radio-1"
                       className="radio radio-primary form-radio border-white"
                     />
-                    <span className="ml-2 text-2xl font-bold">Leasing</span>
+                    <span className="ml-2 text-base md:text-2xl font-bold ">
+                      Leasing
+                    </span>
                   </label>
                 </div>
               </div>
@@ -117,7 +123,7 @@ const ContactForm = () => {
                 <div className="relative ">
                   <label
                     htmlFor="message"
-                    className="leading-7 text-2xl text-white "
+                    className="leading-7 text-base md:text-2xl text-white "
                   >
                     Message
                   </label>

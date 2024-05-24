@@ -1,217 +1,234 @@
 import { useState } from "react";
+import { IoCall } from "react-icons/io5";
 import logo from "../../../public/Images/Navbar Logo.png";
 import { Link, NavLink } from "react-router-dom";
-
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
   const navItemStyle = `text-xl tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400`;
   return (
     <div>
+      {/* Navbar Top */}
       <div className="bg-black py-3">
-    <div className="flex items-center justify-between container px-20">
-      <div>sfsafsfsdfssdffdf</div>
-      <div>
-      <Link to="" className="inline-black rounded-full px-5 py-1 border-2 border-white  text-md  text-white  hover:text-white  focus:ring ">Free Home Evalution</Link>
+        <div className="flex justify-between mx-4 md:px-20">
+          <div className="hidden md:block md:w-1/3"></div>
+          <div className="md:flex justify-center w-full  md:w-1/3">
+            <Link
+              to="/contact"
+              className="inline-black rounded-full px-5 py-1 border-2 border-white text-[12px]  md:text-md  text-white    focus:ring "
+            >
+              Free Home Evalution
+            </Link>
+          </div>
+          <div className="flex justify-end w-full md:w-1/3">
+            <a
+              href="tel:416-742-8000"
+              className="text-md text-white font-bold flex items-center gap-2"
+            >
+              <IoCall /> 416-742-8000
+            </a>
+          </div>
+        </div>
       </div>
-      <div>
-        <p className="text-md text-white font-bold"> 416-742-8000</p>
-      </div>
-    </div>
-      </div>
-    <div className="container">
-      <div className="px-4  mx-auto py-3 md:block hidden">
-        <div className=" flex items-center justify-between lg:justify-center lg:space-x-16 ">
-          <ul className=" items-center hidden space-x-8 lg:flex">
-            <li>
+      {/* Navbar for Desktop  */}
+      <div className=" mx-auto">
+        <div className="px-4  mx-auto py-3 md:block hidden">
+          <div className=" flex items-center justify-between lg:justify-center lg:space-x-16 ">
+            <ul className=" flex items-center hidden space-x-8 md:flex">
+              <li>
+                <NavLink
+                  to="/buy"
+                  aria-label="Buy"
+                  title="Buy"
+                  className={navItemStyle}
+                >
+                  Buy
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/pre-construction"
+                  aria-label="Pre Construction"
+                  title="Pre Construction"
+                  className={navItemStyle}
+                >
+                  Pre Construction
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/sell"
+                  aria-label="Sell"
+                  title="Sell"
+                  className={navItemStyle}
+                >
+                  Sell
+                </NavLink>
+              </li>
+            </ul>
+            <Link
+              to="/"
+              aria-label="Logo"
+              title="Logo"
+              className="inline-flex items-center"
+            >
+              <img src={logo} alt="Enamul Haque Website Logo" />
+            </Link>
+            <ul className="flex items-center hidden space-x-8 md:flex">
+              <li>
+                <NavLink
+                  to="/about"
+                  aria-label="About"
+                  title="About"
+                  className={navItemStyle}
+                >
+                  About Us
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/blogs"
+                  aria-label="Blogs"
+                  title="Blogs"
+                  className={navItemStyle}
+                >
+                  Blogs
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/contact"
+                  aria-label="Contact Us"
+                  title="Contact Us"
+                  className={navItemStyle}
+                >
+                  Contact Us
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/* for Tab and phone  */}
+        <nav className="bg-white block shadow md:hidden absolute left-0 right-0 z-50 ">
+          <div className="max-w-7xl  mx-auto shadow px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <div className="flex-shrink-0">
+                <Link to="/" className="flex items-center font-bold">
+                  <img
+                    src={logo}
+                    className="h-16"
+                    alt="Enamul Haque Website Logo"
+                  />
+                </Link>
+              </div>
+
+              <div className="-mr-2 flex lg:hidden">
+                <button
+                  onClick={toggleNavbar}
+                  type="button"
+                  className="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                  aria-controls="mobile-menu"
+                  aria-expanded={isOpen}
+                >
+                  <span className="sr-only">Open main menu</span>
+                  <svg
+                    className={`${isOpen ? "hidden" : "block"} h-6 w-6`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                  <svg
+                    className={`${isOpen ? "block" : "hidden"} h-6 w-6`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={`transform transition-all duration-300 ease-in-out ${
+              isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            } overflow-hidden md:hidden`}
+            id="mobile-menu"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 h-screen">
               <NavLink
-                to="/featuer/buy"
-                aria-label="Our product"
-                title="Our product"
-                className={navItemStyle}
+                exact
+                to="/"
+                className="block px-3 py-2 text-base font-medium"
+                activeClassName="text-orange-500"
               >
-                Buy
+                Home
               </NavLink>
-            </li>
-            <li>
               <NavLink
-                to="/featuer/pre-construction"
-                aria-label="Our product"
-                title="Our product"
-                className={navItemStyle}
-              >
-                Pre Construction
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/featuer/sell"
-                aria-label="Our product"
-                title="Our product"
-                className={navItemStyle}
+                to="/sell"
+                className="block px-3 py-2 text-base font-medium"
+                activeClassName="text-orange-500"
               >
                 Sell
               </NavLink>
-            </li>
-            
-          </ul>
-          <NavLink
-            to="/"
-            aria-label="Company"
-            title="Company"
-            className="inline-flex items-center"
-          >
-            <img src={logo} alt="Enamul Haque Website Logo" />
-          </NavLink>
-          <ul className="flex items-center hidden space-x-8 lg:flex">
-          <li>
+              <NavLink
+                to="/buy"
+                className="block px-3 py-2 text-base font-medium"
+                activeClassName="text-orange-500"
+              >
+                Buy
+              </NavLink>
+              <NavLink
+                to="/pre-construction"
+                className="block px-3 py-2 text-base font-medium"
+                activeClassName="text-orange-500"
+              >
+                Pre Construction
+              </NavLink>
               <NavLink
                 to="/about"
-                aria-label="Product pricing"
-                title="Product pricing"
-                className={navItemStyle}
+                className="block px-3 py-2 text-base font-medium"
+                activeClassName="text-orange-500"
               >
                 About Us
               </NavLink>
-            </li> <li>
               <NavLink
                 to="/blogs"
-                aria-label="blogs"
-                title="blogs"
-                className={navItemStyle}
+                className="block px-3 py-2 text-base font-medium"
+                activeClassName="text-orange-500"
               >
-                Blogs
+                Blog
               </NavLink>
-            </li>
-            <li>
               <NavLink
                 to="/contact"
-                aria-label="Contact Us"
-                title="Contact Us"
-                className={navItemStyle}
+                className="block px-3 py-2 text-base font-medium"
+                activeClassName="text-orange-500"
               >
                 Contact Us
               </NavLink>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </div>
+        </nav>
       </div>
-      {/* for Tab and phone  */}
-      <nav className="bg-white shadow md:hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex-shrink-0">
-              <NavLink
-                to="/"
-                className="flex items-center text-gray-800 font-bold"
-              >
-                Logow
-              </NavLink>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <NavLink
-                  exact
-                  to="/"
-                  className="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-                  activeClassName="bg-gray-100"
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  to="/about"
-                  className="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-                  activeClassName="bg-gray-100"
-                >
-                  About
-                </NavLink>
-                <NavLink
-                  to="/contact"
-                  className="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-                  activeClassName="bg-gray-100"
-                >
-                  Contact
-                </NavLink>
-              </div>
-            </div>
-            <div className="-mr-2 flex md:hidden">
-              <button
-                onClick={toggleNavbar}
-                type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                <svg
-                  className={`${isOpen ? "hidden" : "block"} h-6 w-6`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-                <svg
-                  className={`${isOpen ? "block" : "hidden"} h-6 w-6`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`${isOpen ? "block" : "hidden"} md:hidden`}
-          id="mobile-menu"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink
-              exact
-              to="/"
-              className="text-gray-800 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-              activeClassName="bg-gray-100"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/about"
-              className="text-gray-800 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-              activeClassName="bg-gray-100"
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className="text-gray-800 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-              activeClassName="bg-gray-100"
-            >
-              Contact
-            </NavLink>
-          </div>
-        </div>
-      </nav>
-    </div>
     </div>
   );
 };

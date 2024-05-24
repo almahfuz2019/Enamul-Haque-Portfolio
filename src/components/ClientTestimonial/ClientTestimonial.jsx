@@ -2,7 +2,7 @@ import React from "react";
 const ClientTestimonial = () => {
   return (
     <div className="container mx-auto py-20">
-      <h1 className="text-center text-4xl mb-10">Client Testimonial</h1>
+      <h1 className="text-center text-3xl md:text-4xl mb-10">Client Testimonial</h1>
       <div className="grid md:grid-cols-2 grid-cols-1 px-5 lg:grid-cols-3 gap-4">
         <div className="border rounded-lg p-10">
           <div className="flex gap-4">

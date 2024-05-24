@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaArrowRight, FaPencil } from "react-icons/fa6";
+import { Link, useParams } from "react-router-dom";
+
+import AllBlogs from "../../../public/Blogs.json";
 const ServiceDetails = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState([]);
@@ -18,7 +22,7 @@ const ServiceDetails = () => {
         className=" bg-center py-24 mb-24"
         style={{
           backgroundImage:
-            "url('https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+            "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/65100b03ebdf63e00bef1bd0_Rectangle%2084%20(1).png')",
         }}
       >
         <h1 className="text-center text-5xl font-bold text-white">
@@ -29,21 +33,27 @@ const ServiceDetails = () => {
       <div className="container mx-auto  px-4 text-center my-10">
         <div className=" mx-auto ">
           <img className="mx-auto w-full h-full" src={img} alt="" />
-          <div className="py-5 flex justify-between">
-            <h1 className="text-4xl font-bold">{title}</h1>
-            <div>
-                <p className="text-[#a6a6a6]">David Broon</p>
-                <p className="text-[#a6a6a6]">OCtober 20,2023</p>
+          <div className="py-5 md:flex text-left md:justify-between">
+            <h1 className="text-2xl md:text-4xl font-bold mb-2">{title}</h1>
+            <div className="flex flex-col md:flex-row">
+              <p className="text-[#a6a6a6]  flex gap-2 items-center">
+                <FaPencil className="text-black" />
+                David Broon
+              </p>
+              <p className="text-[#a6a6a6] flex gap-2 items-center">
+                <FaCalendarAlt className="text-black" /> OCtober 20,2023
+              </p>
             </div>
           </div>
-          <p dangerouslySetInnerHTML={{ __html:body }} className="text-[#a6a6a6] text-[18px] text-left"></p>
+          <p
+            dangerouslySetInnerHTML={{ __html: body }}
+            className="text-[#a6a6a6] text-[18px] text-left"
+          ></p>
         </div>
       </div>
       <div className="container mx-auto text-center mb-10">
-     
-        
-          <p className="text-[18px] font-semibold mb-2">Share Post</p>
-      
+        <p className="text-[18px] font-semibold mb-2">Share Post</p>
+
         <div className="flex items-center justify-center gap-3">
           <a>
             <svg
@@ -80,32 +90,27 @@ const ServiceDetails = () => {
           </a>
         </div>
       </div>
-      <div className="container mx-auto mb-24">
-    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    
-      <div className=" shadow overflow-hidden flex justify-center items-center p-[10px] border border-gray-200 gap-3">
-        <img  src="https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg" alt="Image 1" className="h-24 w-24 "/>
-        <div className="">
-          <p className="text-gray-500 text-md">October 20, 2023</p>
-          <h3 className="text-xl font-bold text-gray-900">Top 10 Tips for First-Time Homebuyers</h3>
+      <div className="container mx-auto mb-24 px-5">
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {AllBlogs.map((BlogItem) => (
+            <div
+              key={BlogItem.id}
+              className=" shadow overflow-hidden flex justify-center items-center p-[10px] border border-gray-200 gap-3"
+            >
+              <img src={BlogItem.img} alt="Image 1" className="h-24 w-24 " />
+              <div className="">
+                <p className="text-gray-500 text-md">October 20, 2023</p>
+                <Link
+                  to={`/service/${BlogItem.id}`}
+                  className="text-xl font-bold text-gray-900"
+                >
+                  Top 10 Tips for First-Time Homebuyers
+                </Link>
+              </div>
+            </div>
+        ))}
+          </div>
         </div>
-      </div>
-      <div className=" shadow overflow-hidden flex p-[10px] border border-gray-200 gap-3">
-        <img  src="https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg" alt="Image 1" className="h-24 w-24 object-cover"/>
-        <div className="">
-          <p className="text-gray-500 text-md">October 20, 2023</p>
-          <h3 className="text-xl font-bold text-gray-900">Top 10 Tips for First-Time Homebuyers</h3>
-        </div>
-      </div>
-      <div className=" shadow  overflow-hidden flex p-[10px] border border-gray-200 gap-3">
-        <img  src="https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg" alt="Image 1" className="h-24 w-24 object-cover"/>
-        <div className="">
-          <p className="text-gray-500 text-md">October 20, 2023</p>
-          <h3 className="text-xl font-bold text-gray-900">Top 10 Tips for First-Time Homebuyers</h3>
-        </div>
-      </div>
-    </div>
-  </div>
     </div>
   );
 };
