@@ -1,5 +1,47 @@
 import { FaArrowRight } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
+
 const ForConnected = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+  const form = useRef();
+
+  const onSubmit = (data) => {
+    sendEmail(data.email); // Pass the email field from form data to sendEmail function
+  };
+
+  const sendEmail = () => {
+    emailjs
+      .sendForm(
+        "service_btn6m6h",
+        "template_nkf6nfw",
+        form.current,
+        "xggGQ3kcYwUpUESDc",
+      )
+      .then(
+        (result) => {
+          toast.success("Email sent successfully", {
+            position: "top-right",
+          });
+          console.log("SUCCESS!", result.text);
+          reset();
+        },
+        (error) => {
+          toast.error("Email sending failed!", {
+            position: "top-right",
+          });
+          console.log("FAILED...", error.text);
+        },
+      );
+  };
+
   return (
     <div>
       <div
@@ -13,41 +55,49 @@ const ForConnected = () => {
         }}
       >
         <div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
-          <h1 className=" text-3xl md:text-4xl mb-6 antialiased font-semibold leading-none text-center text-white">
+          <h1 className="dm-sans-font text-3xl md:text-4xl mb-6 antialiased font-semibold leading-none text-center text-white">
             Stay Connected
           </h1>
           <p className="pt-2 pb-8 text-base antialiased text-center text-white">
             Sign up for our weekly newsletter to receive the latest in real
             estate and Enamul Haque!
           </p>
-          <div className=" hidden md:flex flex-row">
-            <input
-              type="text"
-              placeholder="Type Your Email"
-              className="w-3/5 p-3 rounded-l-lg sm:w-2/3"
-            />
-            <button
-              type="button"
-              className="w-2/5 p-3 font-semibold rounded-r-lg sm:w-1/3 bg-primary text-gray-50"
+
+          <div>
+            <form
+              className="flex  justify-center items-center flex-row mx-[10%]"
+              onSubmit={handleSubmit(onSubmit)}
+              ref={form}
             >
-              Subscribe
-            </button>
-          </div>
-          <div className="flex md:hidden  mx-auto justify-center items-center flex-row">
-            <input
-              type="text"
-              placeholder="Type Your Email"
-              className=" px-3 w-72 h-9 rounded "
-            />
-            <button
-              type="button"
-              className=" ml-2 p-3 font-semibold rounded-full h-10 w-10  border  text-gray-50"
-            >
-              <FaArrowRight />
-            </button>
+              <input
+                type="text"
+                defaultValue=""
+                className="rounded px-2 h-8 md:h-12 w-full"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                    message: "Invalid email address",
+                  },
+                })}
+                placeholder="Type Your Email"
+              />
+              <button
+                type="submit"
+                className="ml-2 p-3 md:p-4 font-semibold rounded-full h-10 md:h-12 md:w-12  w-10 border text-gray-50 hover:bg-primary flex items-center justify-center"
+              >
+                <FaArrowRight />
+              </button>
+            </form>
+            {errors.email && (
+              <p className="text-red-300 text-center text-sm mt-2  block">
+                {errors.email.message}
+              </p>
+            )}
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

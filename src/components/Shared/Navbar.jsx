@@ -7,7 +7,7 @@ export const Navbar = () => {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-  const navItemStyle = `text-xl tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400`;
+  const navItemStyle = `text-xl tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 dm-sans-font`;
   return (
     <div>
       {/* Navbar Top */}
@@ -17,7 +17,7 @@ export const Navbar = () => {
           <div className="md:flex justify-center w-full  md:w-1/3">
             <Link
               to="/contact"
-              className="inline-black rounded-full px-5 py-1 border-2 border-white text-[12px]  md:text-md  text-white    focus:ring "
+              className="inline-black rounded-full px-5 py-1 border-2 border-white text-[12px]  md:text-md  text-white    focus:ring dm-sans-font"
             >
               Free Home Evalution
             </Link>
@@ -25,7 +25,7 @@ export const Navbar = () => {
           <div className="flex justify-end w-full md:w-1/3">
             <a
               href="tel:416-742-8000"
-              className="text-md text-white font-bold flex items-center gap-2"
+              className="text-md dm-sans-font text-white font-bold flex items-center gap-2"
             >
               <IoCall /> 416-742-8000
             </a>
@@ -174,7 +174,7 @@ export const Navbar = () => {
             } overflow-hidden md:hidden`}
             id="mobile-menu"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 h-screen">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
               <NavLink
                 exact
                 to="/"

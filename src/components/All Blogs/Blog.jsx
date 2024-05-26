@@ -23,7 +23,7 @@ const Blog = ({ AllBlogs }) => {
               </a>
 
               <Link
-                to={`/service/${BlogItem.id}`}
+                to={`/blog/${BlogItem.id}`}
                 className="group mt-4 flex items-center  gap-1 text-base md:text-xl font-medium text-primary"
               >
                 Read More

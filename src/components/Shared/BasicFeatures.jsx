@@ -10,7 +10,7 @@ const BasicFeatures = () => {
               alt=""
             />
 
-            <h2 className="mt-2 text-2xl  font-bold">1) Enter Address</h2>
+            <h2 className="mt-2 text-2xl  font-bold dm-sans-font ">1) Enter Address</h2>
 
             <p className=" sm:mt-1 sm:block  text-lg sm:text-gray-600">
               Please enter and select your <br /> home address to get started.
@@ -22,7 +22,7 @@ const BasicFeatures = () => {
               alt=""
             />
 
-            <h2 className="mt-2 text-2xl  font-bold">
+            <h2 className="mt-2 text-2xl  font-bold dm-sans-font ">
               2) Provide Contact Info
             </h2>
 
@@ -37,7 +37,7 @@ const BasicFeatures = () => {
               alt=""
             />
 
-            <h2 className="mt-2 text-2xl  font-bold">
+            <h2 className="mt-2 text-2xl  font-bold dm-sans-font ">
               3) View Your Home Estimate
             </h2>
 

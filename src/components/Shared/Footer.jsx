@@ -7,7 +7,7 @@ const Footer = () => {
       <h1 className="md:text-2xl text-base md:mb-4 font-medium">
         Proudly Serving
       </h1>
-      <div className="grid text-left md:text-center grid-cols-2 md:grid-cols-4 gap-10 text-base md:text-2xl font-medium">
+      <div className="grid w-full text-left md:text-center grid-cols-2 md:grid-cols-4 gap-10 text-base md:text-2xl font-medium">
         <div>
           Mississauga <br />
           Oakville <br />
@@ -35,7 +35,7 @@ const Footer = () => {
           Oshawa
         </div>
       </div>
-      <div className="border-2 border-x-0 w-full md:w-1/2 border-y-2 py-10  border-white font-medium">
+      <div className="border-2 border-x-0 w-full lg:w-full  md:w-1/2 border-y-2 py-10  border-white font-medium">
         <h1 className="md:text-2xl text-base mb-6">Contact Us</h1>
         <div className="text-base mb-4">
           <a href="tel:+1234567890">Phone: 416-742-8000</a> <br />

@@ -7,7 +7,7 @@ const OwnerSpeech = () => {
         <h1 className="text-3xl md:text-4xl text-center  font-medium font-md">
           Ontario's Premier Real Estate Professionals
         </h1>
-        <p className="md:text-center text-justify mx-auto text-base md:text-lg my-5 md:w-3/4">
+        <p className="md:text-center text-justify mx-auto text-base md:text-lg my-5 ">
           Enamul Haque's clients enjoy an exceptional level of service, aligning
           with the expectations of working with one of Canada's leading real
           estate teams. Our team comprises experts in various domains, including

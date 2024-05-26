@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 const FreeHomeValuation = () => {
   return (
     <div>
-      <div className="  my-10 container mx-auto px-5">
+      <div className="  mt-10 mb-20 container mx-auto px-5">
         <p className="text-primary  text-center text-sm md:text-xl mb-1 md:mb-5">
           Receive Your Instant Free Home Valuation
         </p>
-        <h1 className="text-3xl md:text-4xl text-center  font-medium font-md">
+        <h1 className="text-3xl md:text-4xl text-center dm-sans-font font-medium font-md">
           Considering a <span className="font-bold">Sale or Purchase?</span>
         </h1>
-        <p className="md:text-center mx-auto text-sm md:text-lg my-5 mb-8 lg:w-3/4">
+        <p className="md:text-center mx-auto text-sm md:text-lg my-5 mb-8 dm-sans-font lg:w-3/4">
           Whether you're contemplating a sale or purchase, your achievement is
           our top priority, especially in today's competitive market.
           Determining the right price for your property is crucial, and our

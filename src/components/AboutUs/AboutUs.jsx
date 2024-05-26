@@ -7,20 +7,20 @@ const AboutUs = () => {
   return (
     <div className=" mx-auto ">
       <div className=" mx-auto ">
-        <div className="flex flex-col  mx-auto overflow-hidden mt-16 md:mt-0 ">
+        <div className="flex flex-col justify-center items-center  mx-auto overflow-hidden mt-16 md:mt-0 ">
           <img
             src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ade6846a18cefd3326e1c_Rectangle%2085.png"
             alt=""
             className="w-full h-40 lg:h-96 "
           />
-          <div className="lg:p-6 px-5  pb-12 m-4 mx-auto lg:-mt-32 space-y-6  sm:px-10 sm:mx-12  pt-10 bg-white">
+          <div className="lg:p-10 px-5 md:p-8  container  pb-12 m-4 mx-auto lg:-mt-32 space-y-6  sm:px-10 sm:mx-12  pt-10 bg-white">
             <div className="space-y-2 text-center lg:text-left">
               <h1
                 rel="noopener noreferrer"
                 href="#"
-                className="inline-block  text-2xl lg:text-5xl font-bold "
+                className="inline-block  text-2xl lg:text-5xl  "
               >
-                About Enam
+                About <span className="font-bold">Enam</span>
               </h1>
             </div>
             <div className="text-center lg:text-left">

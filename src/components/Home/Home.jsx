@@ -10,16 +10,19 @@ import HeroSection from './HeroSection';
 
 const Home = () => {
     return (
-        <div>
-            <HeroSection/>
-            <WhyChooseEnam/>
-            <OwnerSpeech/>
-            <Services/>
-            <ClientTestimonial/>
-            <FreeHomeValuation/>
-            <AllBlogs/>
-            <ForConnected/>
-        </div>
+      <div>
+        <HeroSection />
+        <WhyChooseEnam />
+        <OwnerSpeech />
+        <Services />
+        <ClientTestimonial />
+        <FreeHomeValuation />
+        <h1 className="dm-sans-font text-center text-3xl md:text-4xl  dm-sans-font mb-3">
+          Recent News & Blog
+        </h1>
+        <AllBlogs />
+        <ForConnected />
+      </div>
     );
 };
 
