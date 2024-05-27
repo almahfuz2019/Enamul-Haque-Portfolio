@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import logo from "../../../public/Images/Footer Logo.png";
+// Social Meda Icons
+import youtube from "./../../../public/Images/Icons/youtube.png";
+import facebook from "./../../../public/Images/Icons/facebook.png";
+import linkdin from "./../../../public/Images/Icons/linkdin.png";
+import twitter from "./../../../public/Images/Icons/twitter.png";
 const Footer = () => {
   return (
     <footer className="footer footer-center md:py-20 pt-20 pb-10 bg-black text-white  ">
-      <img className="h-28" src={logo} alt="" />
+      <img className="h-28" src={logo} alt="Enamul Haque website logo" />
       <h1 className="md:text-2xl text-base md:mb-4 font-medium">
         Proudly Serving
       </h1>
@@ -42,29 +47,17 @@ const Footer = () => {
           <a href="mailto:example@example.com">enamulhaque@gmail.com</a>
         </div>
         <div className="grid grid-flow-col gap-4">
-          <a href="https://x.com/">
-            <img
-              src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ac0683b726557b1c77b5e_Group%2018497%20(1).png"
-              alt=""
-            />
+          <a href="https://twitter.com/">
+            <img src={twitter} alt="twitter" />
           </a>
           <a href="https://www.facebook.com/">
-            <img
-              src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ac0607e17935cd2403be4_Group%2051%20(1).png"
-              alt=""
-            />
+            <img src={facebook} alt="facebook Logo" />
           </a>
           <a href="https://www.linkedin.com/">
-            <img
-              src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ac055b1b57e07c219c4cc_Group%2050%20(1).png"
-              alt=""
-            />
+            <img src={linkdin} alt="linkdin Logo" />
           </a>
           <a href="https://www.youtube.com/">
-            <img
-              src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ac04af47cf01adfdd3e60_Group%2049%20(1).png"
-              alt=""
-            />
+            <img src={youtube} alt="youtube Logo" />
           </a>
         </div>
         <nav className="grid grid-flow-col gap-4 mt-4 text-base">
@@ -75,7 +68,7 @@ const Footer = () => {
             Carrer
           </Link>
           <Link to="/blog" className="link link-hover">
-            Blog
+            Blogs
           </Link>
           <Link to="" className="link link-hover">
             Privacy Policy

@@ -1,7 +1,9 @@
+/* For Link active  */
 .active {
   border-bottom: 2px solid #ff7836 !important;
   color: #ff7836 !important;
 }
+/* Fonts  */
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -16,18 +18,3 @@ body {
 .dm-sans-font {
   font-family: "DM Sans", sans-serif;
 }
-/* .each-slide-effect > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  height: 350px;
-}
-
-.each-slide-effect span {
-  padding: 20px;
-  font-size: 20px;
-  background: #efefef;
-  text-align: center;
-} */
-

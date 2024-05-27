@@ -1,13 +1,19 @@
-import React from "react";
+import Property_Valuation from "./../../../public/Images/Icons/Property_Valuation.webp";
+import Property_Inspections from "./../../../public/Images/Icons/Property_Inspections.webp";
+import Contract_Negotiation from "./../../../public/Images/Icons/Contract_Negotiation.webp";
+import Buyer_Representation from "./../../../public/Images/Icons/Buyer_Representation.webp";
+import Home_Staging from "./../../../public/Images/Icons/Home_Staging.webp";
+import Property_Marketing from "./../../../public/Images/Icons/Property_Marketing.webp";
+import A_man_is_writing from "./../../../public/Images/A_man_is_writing.png";
 const Services = () => {
   return (
     <div>
       <div
         className=" bg-center bg-black bg-cover  py-32  "
         style={{
-          backgroundImage:
-            "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/664f53afe7daaf311d7a60c8_63f8a30847f2032841448702_service-bg.png')",
+          backgroundImage: `url(${A_man_is_writing})`,
         }}
+        alt="A man is writting"
       >
         <h1 className="text-center text-white text-3xl dm-sans-font md:text-4xl mb-16">
           Services
@@ -16,8 +22,8 @@ const Services = () => {
           <div className="text-center mx-auto">
             <img
               className="h-24 mx-auto"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63f8a1e555dfde7e4ba6eeb1_1.webp"
-              alt=""
+              src={Property_Valuation}
+              alt="  Property Valuation"
             />
             <p className="text-white mt-5 text-base md:text-2xl dm-sans-font">
               Property Valuation
@@ -26,8 +32,8 @@ const Services = () => {
           <div className="text-center mx-auto">
             <img
               className="h-24 mx-auto"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63f8a1e4e202f227048de5fe_2.webp"
-              alt=""
+              src={Property_Marketing}
+              alt=" Property Marketing"
             />
             <p className="text-white mt-5 text-base md:text-2xl dm-sans-font">
               Property Marketing
@@ -36,8 +42,8 @@ const Services = () => {
           <div className="text-center mx-auto">
             <img
               className="h-24 mx-auto"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63f8a1e42ea727499a0c714d_3.webp"
-              alt=""
+              src={Home_Staging}
+              alt="  Home Staging"
             />
             <p className="text-white mt-5 text-base md:text-2xl dm-sans-font">
               Home Staging
@@ -46,8 +52,8 @@ const Services = () => {
           <div className="text-center mx-auto">
             <img
               className="h-24 mx-auto"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63f8a1e3c7b20ccc76251110_4.webp"
-              alt=""
+              src={Buyer_Representation}
+              alt=" Buyer Representation"
             />
             <p className="text-white mt-5 text-base md:text-2xl dm-sans-font">
               Buyer Representation
@@ -56,8 +62,8 @@ const Services = () => {
           <div className="text-center mx-auto">
             <img
               className="h-24 mx-auto"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63f8a1e41895d80314002936_5.webp"
-              alt=""
+              src={Contract_Negotiation}
+              alt=" Contract Negotiation"
             />
             <p className="text-white mt-5 text-base md:text-2xl dm-sans-font">
               Contract Negotiation
@@ -66,8 +72,8 @@ const Services = () => {
           <div className="text-center mx-auto">
             <img
               className="h-24 mx-auto"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63f8a1e555dfde13eca6eec9_6.webp"
-              alt=""
+              src={Property_Inspections}
+              alt="Property Inspections"
             />
             <p className="text-white mt-5 text-base md:text-2xl dm-sans-font">
               Property Inspections

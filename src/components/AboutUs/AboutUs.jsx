@@ -2,16 +2,16 @@ import ForConnected from "../ForConnected/ForConnected";
 import OwnerSpeech from "../Shared/OwnerSpeech";
 import Services from "../Shared/Services";
 import WhyChooseEnam from "../Shared/WhyChooseEnam";
-
+import Modern_Skyscrapers from "./../../../public/Images/Modern_Skyscrapers.png";
 const AboutUs = () => {
   return (
     <div className=" mx-auto ">
       <div className=" mx-auto ">
         <div className="flex flex-col justify-center items-center  mx-auto overflow-hidden mt-16 md:mt-0 ">
           <img
-            src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650ade6846a18cefd3326e1c_Rectangle%2085.png"
-            alt=""
-            className="w-full h-40 lg:h-96 "
+            src={Modern_Skyscrapers}
+            alt="Modern skyscrapers with glass facades reflecting the sky"
+            className="w-full h-52 lg:h-[500px] "
           />
           <div className="lg:p-10 px-5 md:p-8  container  pb-12 m-4 mx-auto lg:-mt-32 space-y-6  sm:px-10 sm:mx-12  pt-10 bg-white">
             <div className="space-y-2 text-center lg:text-left">

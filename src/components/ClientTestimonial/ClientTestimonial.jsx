@@ -1,4 +1,7 @@
-import React from "react";
+import User_1 from "./../../../public/Images/User_1.png";
+import User_2 from "./../../../public/Images/User_2.png";
+import User_3 from "./../../../public/Images/User_3.png";
+import star from "./../../../public/Images/Icons/Star.svg";
 const ClientTestimonial = () => {
   return (
     <div className="container mx-auto py-20 dm-sans-font">
@@ -8,42 +11,18 @@ const ClientTestimonial = () => {
       <div className="grid md:grid-cols-2 grid-cols-1 px-5 lg:grid-cols-3 gap-4">
         <div className="border rounded-lg p-3 md:p-10">
           <div className="flex gap-4">
-            <img
-              className=" h-16 w-16"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/653f3ffcedc184f7f49e3638_Ellipse%20931.png"
-              alt=""
-            />
+            <img className=" h-16 w-16" src={User_3} alt="" />
             <div>
               <p className="font-bold text-xl">John Willy</p>
               <p className="text-md">Toronto,CA</p>
             </div>
           </div>{" "}
           <div className="flex my-4">
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
           </div>
           <p className="text-[#8A8D9B] text-md">
             Enam made my first-time home buying a breeze, explaining everything
@@ -53,42 +32,18 @@ const ClientTestimonial = () => {
         </div>
         <div className="border rounded-lg p-3 md:p-10">
           <div className="flex gap-4">
-            <img
-              className=" h-16 w-16"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e1469cf807d60101f8b_1.webp"
-              alt=""
-            />
+            <img className=" h-16 w-16" src={User_1} alt="" />
             <div>
-              <p className="font-bold text-xl">Sahed Chowdhury</p>
+              <p className="font-bold text-xl">Emily Johnson</p>
               <p className="text-md">Toronto,CA</p>
             </div>
           </div>{" "}
           <div className="flex my-4">
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
           </div>
           <p className="text-[#8A8D9B] text-md">
             Enam is a true professional. He made my first-time home buying
@@ -98,42 +53,18 @@ const ClientTestimonial = () => {
         </div>
         <div className="border rounded-lg p-3 md:p-10">
           <div className="flex gap-4">
-            <img
-              className=" h-16 w-16"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/653f406176c41a7a41f651a0_Ellipse%20932.png"
-              alt=""
-            />
+            <img className=" h-16 w-16" src={User_2} alt="" />
             <div>
               <p className="font-bold text-xl">David Ross</p>
               <p className="text-md">Toronto,CA</p>
             </div>
           </div>{" "}
           <div className="flex my-4">
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
-            <img
-              className="h-5 w-5"
-              src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
-              alt=""
-            />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
+            <img className="h-5 w-5" src={star} alt="User rating with stars" />
           </div>
           <p className="text-[#8A8D9B] text-md">
             Enam helped me find the perfect investment property. He's not just a
@@ -184,7 +115,7 @@ export default ClientTestimonial;
 //                   <img
 //                     key={index}
 //                     className="h-5 w-5"
-//                     src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
+//                     src={star}
 //                     alt=""
 //                   />
 //                 ))}
@@ -213,7 +144,7 @@ export default ClientTestimonial;
 //                   <img
 //                     key={index}
 //                     className="h-5 w-5"
-//                     src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
+//                     src={star}
 //                     alt=""
 //                   />
 //                 ))}
@@ -242,7 +173,7 @@ export default ClientTestimonial;
 //                   <img
 //                     key={index}
 //                     className="h-5 w-5"
-//                     src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
+//                     src={star}
 //                     alt=""
 //                   />
 //                 ))}
@@ -273,7 +204,7 @@ export default ClientTestimonial;
 //                   <img
 //                     key={index}
 //                     className="h-5 w-5"
-//                     src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
+//                     src={star}
 //                     alt=""
 //                   />
 //                 ))}
@@ -301,7 +232,7 @@ export default ClientTestimonial;
 //                   <img
 //                     key={index}
 //                     className="h-5 w-5"
-//                     src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
+//                     src={star}
 //                     alt=""
 //                   />
 //                 ))}
@@ -328,7 +259,7 @@ export default ClientTestimonial;
 //                   <img
 //                     key={index}
 //                     className="h-5 w-5"
-//                     src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/63fb3e8c0e95342868b563bb_star.svg"
+//                     src={star}
 //                     alt=""
 //                   />
 //                 ))}

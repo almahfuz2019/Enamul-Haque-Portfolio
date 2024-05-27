@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { IoSearch } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
+import Cityscape_Skyline_View from "./../../../public/Images/Cityscape_Skyline_View.png";
+
 const BasicInfoForm = () => {
   const {
     register,
@@ -10,12 +12,8 @@ const BasicInfoForm = () => {
     formState: { errors },
   } = useForm();
   const formRef = useRef();
-
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log(data);
-
-    // Send email using EmailJS
     emailjs
       .sendForm(
         "service_btn6m6h",
@@ -27,12 +25,10 @@ const BasicInfoForm = () => {
         (result) => {
           toast.success("Email sent successfully");
           console.log("Email sent successfully:", result.text);
-          // Handle successful submission
         },
         (error) => {
           toast.error("Email sending failed!");
           console.error("Email sending failed:", error.text);
-          // Handle error
         },
       );
   };
@@ -41,9 +37,9 @@ const BasicInfoForm = () => {
     <div
       className="bg-center py-20"
       style={{
-        backgroundImage:
-          "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/65100b03ebdf63e00bef1bd0_Rectangle%2084%20(1).png')",
+        backgroundImage: `url(${Cityscape_Skyline_View})`,
       }}
+      alt="Cityscape Skyline View"
     >
       <section className="text-white body-font relative dm-sans-font">
         <div className="container px-5 py-16 md:py-24 mx-auto">
@@ -52,7 +48,7 @@ const BasicInfoForm = () => {
               <label htmlFor="Search" className="hidden">
                 Search
               </label>
-              <div className="relative">
+              <div className="relative h-12 lg:h-14">
                 <span className="absolute inset-y-0 left-0 flex items-center px-5">
                   <IoSearch className="text-black text-xl" />
                 </span>
@@ -60,7 +56,7 @@ const BasicInfoForm = () => {
                   type="search"
                   {...register("search", { required: "Search is required" })}
                   placeholder="Type Your Address"
-                  className="w-full lg:h-14 text-lg py-2 pl-12 rounded-full focus:outline-none dark:bg-gray-100 dark:text-gray-800 focus:dark:bg-gray-50 focus:dark:border-violet-600"
+                  className="w-full lg:h-14 text-lg py-2 pl-12 rounded-full focus:outline-none bg-gray-100 text-gray-800 focus:bg-gray-50 focus:border-primary"
                 />
                 {errors.search && (
                   <p className="text-red-300 text-sm text-center mt-1">
@@ -157,7 +153,6 @@ const BasicInfoForm = () => {
           </form>
         </div>
       </section>
-    
     </div>
   );
 };

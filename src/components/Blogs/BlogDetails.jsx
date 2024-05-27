@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { FaCalendarAlt, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
-import { FaArrowRight, FaPencil } from "react-icons/fa6";
+import { FaPencil } from "react-icons/fa6";
 import { Link, useParams } from "react-router-dom";
 import { FaSquareInstagram } from "react-icons/fa6";
 import AllBlogs from "../../../public/Blogs.json";
 import { TbSquareLetterXFilled } from "react-icons/tb";
-
+import Cityscape_Skyline_View from "./../../../public/Images/Cityscape_Skyline_View.png";
 const ServiceDetails = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState([]);
@@ -29,9 +29,9 @@ const ServiceDetails = () => {
       <div
         className=" bg-center py-24 mb-24"
         style={{
-          backgroundImage:
-            "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/65100b03ebdf63e00bef1bd0_Rectangle%2084%20(1).png')",
+          backgroundImage: `url(${Cityscape_Skyline_View})`,
         }}
+        alt="Panoramic view of a cityscape skyline with tall buildings and a clear sky"
       >
         <h1 className="text-center text-5xl font-bold text-white">
           Recent News & Blogs

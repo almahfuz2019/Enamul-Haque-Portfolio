@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast"; // Assuming you want to use toast notifications
+import toast, { Toaster } from "react-hot-toast";
+import Architectural_Rendering from "./../../../public/Images/Architectural_Rendering.webp";
+import Enamul_Haque from "./../../../public/Images/Enamul_Haque.webp";
 
 const HeroSection = () => {
   const {
@@ -12,18 +14,17 @@ const HeroSection = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    // You can add form submission logic here, like sending an email
     toast.success("Message sent successfully", { position: "top-right" });
-    reset(); // Reset form fields after submission
+    reset();
   };
 
   return (
     <div
       className=" relative mx-auto py-20 mb-24 bg-no-repeat bg-cover md:mt-0 mt-16"
       style={{
-        backgroundImage:
-          "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/63c3e01994282732dbe8f725_hero-bg.webp')",
+        backgroundImage: `url(${Architectural_Rendering})`,
       }}
+      alt="Architectural Rendering"
     >
       <div className="lg:grid lg:grid-cols-2 mx-auto gap-4">
         <div className="lg:block hidden"></div>
@@ -153,9 +154,9 @@ const HeroSection = () => {
       <div
         className=" h-96 w-96 xl:h-[550px] xl:w-[550px] bg-cover absolute -mb-20 mt-20 bottom-20 lg:block hidden"
         style={{
-          backgroundImage:
-            "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/63c3e6499efaf32f0e6b9a7b_hero-image.webp')",
+          backgroundImage: `url(${Enamul_Haque})`,
         }}
+        alt="At Emanul Haque, we are dedicated to providing exceptional real estate services tailored to your unique needs. Our team, led by Emanul Haque, a seasoned and trusted Canadian Realtor, is committed to delivering top-notch results for our clients.With a deep understanding of the Canadian real estate market, we take pride in guiding you through every step of your real estate journey. Whether you're buying, selling, or investing in properties, we have the expertise to make your real estate goals a reality"
       ></div>
       <Toaster />
     </div>

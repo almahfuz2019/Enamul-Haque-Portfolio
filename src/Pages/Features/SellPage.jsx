@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Sell from '../../components/Features/Sell';
 const SellPage = () => {
     return (

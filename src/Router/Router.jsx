@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import Home from "../components/Home/Home";
 import NotFound from "../components/Shared/NotFound";
-import BlogDetails from "../components/All Blogs/BlogDetails";
+import BlogDetails from "../components/Blogs/BlogDetails";
 import Contact from "../Pages/Contact/Contact";
 import Blogs from "../Pages/Blogs/Blogs";
 import About from "../Pages/About/About";
 import SellPage from "../Pages/Features/SellPage";
+import Home from "../Pages/Home/Home";
 import PreConstruction from "../components/Features/PreConstruction";
 import Buy from "../components/Features/Buy";
 
@@ -14,15 +14,15 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
-    errorElement: <NotFound></NotFound>,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "/blog/:id",
-        element: <BlogDetails></BlogDetails>,
+        element: <BlogDetails />,
       },
       {
         path: "/contact",

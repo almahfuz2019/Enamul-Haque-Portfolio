@@ -11,7 +11,6 @@ const Blog = ({ AllBlogs }) => {
               src={BlogItem?.img}
               className="h-56 w-full object-cover"
             />
-
             <div className="mt-5">
               <p className="line-clamp-3 text-sm md:text-base text-gray-500 font-bold">
                 {BlogItem?.date}

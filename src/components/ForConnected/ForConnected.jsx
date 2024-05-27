@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
-
+import City_Development from "./../../../public/Images/City_Development.png";
 const ForConnected = () => {
   const {
     register,
@@ -12,11 +12,9 @@ const ForConnected = () => {
     reset,
   } = useForm();
   const form = useRef();
-
   const onSubmit = (data) => {
-    sendEmail(data.email); // Pass the email field from form data to sendEmail function
+    sendEmail(data.email);
   };
-
   const sendEmail = () => {
     emailjs
       .sendForm(
@@ -47,12 +45,12 @@ const ForConnected = () => {
       <div
         className="w-full bg-gray-400 py-5 lg:py-20"
         style={{
-          backgroundImage:
-            "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/650abccdeb96e375819d913f_Rectangle%2070.png')",
+          backgroundImage: `url(${City_Development})`,
           backgroundPosition: "center center",
           backgroundBlendMode: "multiply",
           backgroundSize: "cover",
         }}
+        alt="City Development"
       >
         <div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
           <h1 className="dm-sans-font text-3xl md:text-4xl mb-6 antialiased font-semibold leading-none text-center text-white">

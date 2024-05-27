@@ -1,22 +1,27 @@
+import Local_Expertise_And_Experience from "./../../../public/Images/Local_Expertise_And_Experience.png";
+import Outstanding_Property_Promotion from "./../../../public/Images/Outstanding_Property_Promotion.png";
+import Ultimate_Experience_Assurance from "./../../../public/Images/Ultimate_Experience_Assurance.png";
+import Enamul_Haque from "./../../../public/Images/Enamul_Haque.webp";
+
 const WhyChooseEnam = () => {
   return (
     <div className="   my-10 container mx-auto px-5">
-      <h1 className="text-center text-2xl lg:text-4xl font-bold dm-sans-font  mb-10">
-        Why Choose Enam
+      <h1 className="text-center text-2xl lg:text-4xl  dm-sans-font  mb-10">
+        Why Choose <span className="font-bold">Enam</span>
       </h1>
       <div>
         <img
           className="h-96 lg:hidden block  mx-auto mb-20"
-          src="https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/63c3e6499efaf32f0e6b9a7b_hero-image.webp"
-          alt=""
+          src={Enamul_Haque}
+          alt="At Emanul Haque, we are dedicated to providing exceptional real estate services tailored to your unique needs. Our team, led by Emanul Haque, a seasoned and trusted Canadian Realtor, is committed to delivering top-notch results for our clients.With a deep understanding of the Canadian real estate market, we take pride in guiding you through every step of your real estate journey. Whether you're buying, selling, or investing in properties, we have the expertise to make your real estate goals a reality"
         />
       </div>
       <div className="lg:grid lg:grid-cols-3 flex flex-wrap gap-8 items-center justify-center">
         <div className="shadow border px-5 py-10 lg:w-full md:w-[300px] md:h-[380px] ">
           <img
             className="mx-auto"
-            src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/650a96fe3924d9fe4b02cfe1_image%201.png"
-            alt=""
+            src={Local_Expertise_And_Experience}
+            alt="Local Expertise And Experience"
           />
           <h2 className="text-xl md:text-2xl text-center py-5 font-semibold">
             Local Expertise And Experience
@@ -28,8 +33,8 @@ const WhyChooseEnam = () => {
         <div className=" shadow border px-5 py-10 lg:w-full md:w-[300px] md:h-[380px]">
           <img
             className="mx-auto"
-            src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/650a97eaf47cf01adfacdb4d_image%203%20(1).png"
-            alt=""
+            src={Ultimate_Experience_Assurance}
+            alt="Ultimate Experience Assurance"
           />
           <h2 className="text-[24px] md:text-2xl text-center py-5 font-semibold">
             Ultimate Experience Assurance
@@ -42,8 +47,8 @@ const WhyChooseEnam = () => {
         <div className="shadow border px-5 py-10 lg:w-full md:w-[300px] md:h-[380px] ">
           <img
             className="mx-auto"
-            src="https://assets-global.website-files.com/63c3d5df23be3c7753f0e3fe/650a97f3e877323200745b2f_image%202.png"
-            alt=""
+            src={Outstanding_Property_Promotion}
+            alt="Outstanding Property Promotion"
           />
           <h2 className="text-[24px] md:text-2xl text-center py-5 font-semibold">
             Outstanding Property Promotion

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     <div>
-      <section className="flex items-center h-full p-16  text-gray-600">
+      <section className=" h-screen flex items-center justify-center md:p-16  text-gray-600">
         <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
           <div className=" text-center">
             <h2 className="mb-8 font-extrabold text-9xl ">
@@ -19,7 +19,7 @@ const NotFound = () => {
             <Link
               rel="noopener noreferrer"
               to="/"
-              className="px-8 py-3 font-semibold rounded bg-primary dark:text-gray-50"
+              className="inline-block rounded bg-primary px-8 py-3 text-md font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring"
             >
               Back to homepage
             </Link>

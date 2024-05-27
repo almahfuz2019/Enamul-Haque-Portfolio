@@ -36,7 +36,7 @@ export const Navbar = () => {
       <div className=" mx-auto">
         <div className="px-4  mx-auto py-3 md:block hidden">
           <div className=" flex items-center justify-between lg:justify-center lg:space-x-16 ">
-            <ul className=" flex items-center hidden space-x-8 md:flex">
+            <ul className="  items-center hidden space-x-8 md:flex">
               <li>
                 <NavLink
                   to="/buy"
@@ -76,7 +76,7 @@ export const Navbar = () => {
             >
               <img src={logo} alt="Enamul Haque Website Logo" />
             </Link>
-            <ul className="flex items-center hidden space-x-8 md:flex">
+            <ul className=" items-center hidden space-x-8 md:flex">
               <li>
                 <NavLink
                   to="/about"
@@ -110,7 +110,7 @@ export const Navbar = () => {
             </ul>
           </div>
         </div>
-        {/* for Tab and phone  */}
+        {/*Navbar for Tab and phone  */}
         <nav className="bg-white block shadow md:hidden absolute left-0 right-0 z-50 ">
           <div className="max-w-7xl  mx-auto shadow px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
@@ -216,7 +216,7 @@ export const Navbar = () => {
                 className="block px-3 py-2 text-base font-medium"
                 activeClassName="text-orange-500"
               >
-                Blog
+                Blogs
               </NavLink>
               <NavLink
                 to="/contact"

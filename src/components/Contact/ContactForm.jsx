@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
-
+import Cityscape_Skyline_View from "./../../../public/Images/Cityscape_Skyline_View.png";
 const ContactForm = () => {
   const {
     register,
@@ -10,15 +10,10 @@ const ContactForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-
   const form = useRef();
-
-  // Function to handle form submission
   const onSubmit = (data) => {
-    sendEmail(data); // Pass the form data to sendEmail function
+    sendEmail(data);
   };
-
-  // Function to send email using EmailJS
   const sendEmail = (formData) => {
     emailjs
       .sendForm(
@@ -48,9 +43,9 @@ const ContactForm = () => {
     <div
       className="bg-center py-20 mb-24"
       style={{
-        backgroundImage:
-          "url('https://uploads-ssl.webflow.com/63c3d5df23be3c7753f0e3fe/65100b03ebdf63e00bef1bd0_Rectangle%2084%20(1).png')",
+        backgroundImage: `url(${Cityscape_Skyline_View})`,
       }}
+      alt="City skyline view with tall buildings and clear sky"
     >
       <section className="text-white body-font relative dm-sans-font">
         <div className="container px-5 py-24 mx-auto">
@@ -63,8 +58,6 @@ const ContactForm = () => {
           <div className="mx-auto">
             <form onSubmit={handleSubmit(onSubmit)} ref={form}>
               <div className="flex flex-wrap -m-2">
-                {/* Input fields */}
-                {/* First Name */}
                 <div className="p-2 w-full lg:w-1/2 md:mt-5">
                   <div className="relative">
                     <label
@@ -89,7 +82,6 @@ const ContactForm = () => {
                     )}
                   </div>
                 </div>
-                {/* Last Name */}
                 <div className="p-2 w-full lg:w-1/2 md:mt-5">
                   <div className="relative">
                     <label
@@ -114,7 +106,6 @@ const ContactForm = () => {
                     )}
                   </div>
                 </div>
-                {/* Phone Number */}
                 <div className="p-2 w-full lg:w-1/2 md:mt-5">
                   <div className="relative">
                     <label
@@ -139,7 +130,6 @@ const ContactForm = () => {
                     )}
                   </div>
                 </div>
-                {/* Email */}
                 <div className="p-2 w-full lg:w-1/2 md:mt-5">
                   <div className="relative">
                     <label
@@ -169,7 +159,6 @@ const ContactForm = () => {
                     )}
                   </div>
                 </div>
-                {/* Interest */}
                 <div className="mb-4 mt-4 w-full">
                   <span className="block text-white text-base md:text-2xl">
                     Are you interested in
@@ -224,7 +213,6 @@ const ContactForm = () => {
                     </p>
                   )}
                 </div>
-                {/* Message */}
                 <div className="p-2 w-full">
                   <div className="relative">
                     <label
@@ -248,7 +236,6 @@ const ContactForm = () => {
                     )}
                   </div>
                 </div>
-                {/* Submit Button */}
                 <div className="p-2 w-full mt-3">
                   <button
                     type="submit"
