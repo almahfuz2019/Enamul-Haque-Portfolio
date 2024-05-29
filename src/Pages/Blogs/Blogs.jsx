@@ -3,7 +3,7 @@ import ForConnected from "../../components/ForConnected/ForConnected";
 import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View.png";
 const Blogs = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <div
         className=" bg-center mt-16 md:mt-0  bg-cover  py-32 mb-24 "
         style={{

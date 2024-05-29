@@ -1,7 +1,7 @@
 import AboutUs from "../../components/AboutUs/AboutUs";
 const About = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <AboutUs />
     </div>
   );

@@ -3,7 +3,7 @@
 import Home_Components from "../../components/Home/Home";
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Home_Components />
     </div>
   );

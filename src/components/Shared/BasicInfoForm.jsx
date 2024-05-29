@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { IoSearch } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
-// import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View.png";
 import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
