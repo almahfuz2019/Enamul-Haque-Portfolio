@@ -18,3 +18,53 @@ body {
 .dm-sans-font {
   font-family: "DM Sans", sans-serif;
 }
+
+.slick-slide {
+  margin-left: 0px;
+}
+.slick-dots {
+  margin-bottom: 0%;
+}
+/* Testimonial  */
+@media only screen and (min-width: 350px) {
+  .slick-slide {
+    margin-left: 0px;
+  }
+  .slick-dots {
+    margin-bottom: -4%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .slick-slide {
+    margin-left: 20px;
+  }
+  .slick-dots {
+    margin-bottom: 34%;
+  }
+  .margin-bottom-testimonial {
+    margin-bottom: -200px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .slick-slide {
+    margin-left: 20px;
+  }
+  .slick-dots {
+    margin-bottom: 30%;
+  }
+  .margin-bottom-testimonial {
+    margin-bottom: -300px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .slick-slide {
+    margin-left: 20px;
+  }
+  .slick-dots {
+    margin-bottom: 15%;
+  }
+  .margin-bottom-testimonial {
+    margin-bottom: -150px;
+  }
+}

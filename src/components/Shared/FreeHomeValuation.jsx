@@ -1,9 +1,19 @@
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const FreeHomeValuation = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
-      <div className="  mt-10 mb-20 container mx-auto px-5">
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        className="  mt-10 mb-32 container mx-auto px-5"
+      >
         <p className="text-primary  text-center text-sm md:text-xl mb-1 md:mb-5">
           Receive Your Instant Free Home Valuation
         </p>

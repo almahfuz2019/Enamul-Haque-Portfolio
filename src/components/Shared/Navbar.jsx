@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoCall } from "react-icons/io5";
-import logo from "../../../public/Images/Navbar Logo.png";
+import logo from "../../assets/Images/Navbar Logo.png";
 import { Link, NavLink } from "react-router-dom";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

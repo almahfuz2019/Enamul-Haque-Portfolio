@@ -1,9 +1,14 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
-import Cityscape_Skyline_View from "./../../../public/Images/Cityscape_Skyline_View.png";
+import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ContactForm = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const {
     register,
     handleSubmit,
@@ -27,35 +32,44 @@ const ContactForm = () => {
           toast.success("Email sent successfully", {
             position: "top-right",
           });
-          console.log("SUCCESS!", result.text);
+
           reset();
         },
         (error) => {
           toast.error("Email sending failed!", {
             position: "top-right",
           });
-          console.log("FAILED...", error.text);
         },
       );
   };
 
   return (
     <div
-      className="bg-center py-20 mb-24"
+      className="bg-center py-32 mb-24"
       style={{
         backgroundImage: `url(${Cityscape_Skyline_View})`,
       }}
       alt="City skyline view with tall buildings and clear sky"
     >
-      <section className="text-white body-font relative dm-sans-font">
-        <div className="container px-5 py-24 mx-auto">
+      <section
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        className="text-white body-font relative dm-sans-font"
+      >
+        <div className="container px-5  mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="dm-sans-font text-5xl font-medium title-font mb-4 text-white">
+            <h1
+              data-aos="zoom-in"
+              className=" text-center  text-3xl md:text-5xl font-bold text-white"
+            >
               Contact Us
             </h1>
-            <div className="bg-primary mx-auto h-1 w-44"></div>
+            <div
+              data-aos="zoom-out"
+              className="bg-primary mx-auto h-1 w-44 mt-5"
+            ></div>
           </div>
-          <div className="mx-auto">
+          <div className="mx-auto mt-20">
             <form onSubmit={handleSubmit(onSubmit)} ref={form}>
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-full lg:w-1/2 md:mt-5">

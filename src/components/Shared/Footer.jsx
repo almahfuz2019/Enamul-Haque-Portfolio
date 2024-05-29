@@ -1,14 +1,27 @@
 import { Link } from "react-router-dom";
-import logo from "../../../public/Images/Footer Logo.png";
+import logo from "../../assets/Images/Footer Logo.png";
 // Social Meda Icons
-import youtube from "./../../../public/Images/Icons/youtube.png";
-import facebook from "./../../../public/Images/Icons/facebook.png";
-import linkdin from "./../../../public/Images/Icons/linkdin.png";
-import twitter from "./../../../public/Images/Icons/twitter.png";
+import youtube from "./../../assets/Images/Icons/youtube.png";
+import facebook from "./../../assets/Images/Icons/facebook.png";
+import linkdin from "./../../assets/Images/Icons/linkdin.png";
+import twitter from "./../../assets/Images/Icons/twitter.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Footer = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <footer className="footer footer-center md:py-20 pt-20 pb-10 bg-black text-white  ">
-      <img className="h-28" src={logo} alt="Enamul Haque website logo" />
+    <footer className="footer footer-center  pt-32 pb-10 bg-black text-white  ">
+      <img
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        className="h-28"
+        src={logo}
+        alt="Enamul Haque website logo"
+      />
       <h1 className="md:text-2xl text-base md:mb-4 font-medium">
         Proudly Serving
       </h1>
@@ -47,20 +60,36 @@ const Footer = () => {
           <a href="mailto:example@example.com">enamulhaque@gmail.com</a>
         </div>
         <div className="grid grid-flow-col gap-4">
-          <a href="https://twitter.com/">
+          <a
+            data-aos="fade-left"
+            data-aos-anchor-placement="top-bottom"
+            href="https://twitter.com/"
+          >
             <img src={twitter} alt="twitter" />
           </a>
-          <a href="https://www.facebook.com/">
+          <a
+            data-aos="fade-left"
+            data-aos-anchor-placement="top-bottom"
+            href="https://www.facebook.com/"
+          >
             <img src={facebook} alt="facebook Logo" />
           </a>
-          <a href="https://www.linkedin.com/">
+          <a
+            data-aos="fade-right"
+            data-aos-anchor-placement="top-bottom"
+            href="https://www.linkedin.com/"
+          >
             <img src={linkdin} alt="linkdin Logo" />
           </a>
-          <a href="https://www.youtube.com/">
+          <a
+            data-aos="fade-right"
+            data-aos-anchor-placement="top-bottom"
+            href="https://www.youtube.com/"
+          >
             <img src={youtube} alt="youtube Logo" />
           </a>
         </div>
-        <nav className="grid grid-flow-col gap-4 mt-4 text-base">
+        <nav className="flex flex-wrap justify-center mx-3  gap-4 mt-4 text-base">
           <Link to="" className="link link-hover">
             Terms & Conditions
           </Link>

@@ -1,11 +1,16 @@
-import React, { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { IoSearch } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
-import Cityscape_Skyline_View from "./../../../public/Images/Cityscape_Skyline_View.png";
-
+// import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View.png";
+import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const BasicInfoForm = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const {
     register,
     handleSubmit,
@@ -24,25 +29,27 @@ const BasicInfoForm = () => {
       .then(
         (result) => {
           toast.success("Email sent successfully");
-          console.log("Email sent successfully:", result.text);
         },
         (error) => {
           toast.error("Email sending failed!");
-          console.error("Email sending failed:", error.text);
         },
       );
   };
 
   return (
     <div
-      className="bg-center py-20"
+      className="bg-center py-32"
       style={{
         backgroundImage: `url(${Cityscape_Skyline_View})`,
       }}
       alt="Cityscape Skyline View"
     >
       <section className="text-white body-font relative dm-sans-font">
-        <div className="container px-5 py-16 md:py-24 mx-auto">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          className="container px-5   mx-auto"
+        >
           <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
             <fieldset className="w-full mb-10">
               <label htmlFor="Search" className="hidden">

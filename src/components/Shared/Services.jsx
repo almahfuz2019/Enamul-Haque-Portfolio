@@ -1,11 +1,17 @@
-import Property_Valuation from "./../../../public/Images/Icons/Property_Valuation.webp";
-import Property_Inspections from "./../../../public/Images/Icons/Property_Inspections.webp";
-import Contract_Negotiation from "./../../../public/Images/Icons/Contract_Negotiation.webp";
-import Buyer_Representation from "./../../../public/Images/Icons/Buyer_Representation.webp";
-import Home_Staging from "./../../../public/Images/Icons/Home_Staging.webp";
-import Property_Marketing from "./../../../public/Images/Icons/Property_Marketing.webp";
-import A_man_is_writing from "./../../../public/Images/A_man_is_writing.png";
+import Property_Valuation from "./../../assets/Images/Icons/Property_Valuation.webp";
+import Property_Inspections from "./../../assets/Images/Icons/Property_Inspections.webp";
+import Contract_Negotiation from "./../../assets/Images/Icons/Contract_Negotiation.webp";
+import Buyer_Representation from "./../../assets/Images/Icons/Buyer_Representation.webp";
+import Home_Staging from "./../../assets/Images/Icons/Home_Staging.webp";
+import Property_Marketing from "./../../assets/Images/Icons/Property_Marketing.webp";
+import A_man_is_writing from "./../../assets/Images/A_man_is_writing.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Services = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <div
@@ -19,7 +25,11 @@ const Services = () => {
           Services
         </h1>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 gap-y-20 mx-auto px-5 dm-sans-font">
-          <div className="text-center mx-auto">
+          <div
+            data-aos="fade-left"
+            data-aos-anchor-placement="top-bottom"
+            className="text-center mx-auto"
+          >
             <img
               className="h-24 mx-auto"
               src={Property_Valuation}
@@ -29,7 +39,11 @@ const Services = () => {
               Property Valuation
             </p>
           </div>
-          <div className="text-center mx-auto">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="text-center mx-auto"
+          >
             <img
               className="h-24 mx-auto"
               src={Property_Marketing}
@@ -39,7 +53,11 @@ const Services = () => {
               Property Marketing
             </p>
           </div>
-          <div className="text-center mx-auto">
+          <div
+            data-aos="fade-right"
+            data-aos-anchor-placement="top-bottom"
+            className="text-center mx-auto"
+          >
             <img
               className="h-24 mx-auto"
               src={Home_Staging}
@@ -49,7 +67,11 @@ const Services = () => {
               Home Staging
             </p>
           </div>
-          <div className="text-center mx-auto">
+          <div
+            data-aos="fade-left"
+            data-aos-anchor-placement="top-bottom"
+            className="text-center mx-auto"
+          >
             <img
               className="h-24 mx-auto"
               src={Buyer_Representation}
@@ -59,7 +81,11 @@ const Services = () => {
               Buyer Representation
             </p>
           </div>
-          <div className="text-center mx-auto">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="text-center mx-auto"
+          >
             <img
               className="h-24 mx-auto"
               src={Contract_Negotiation}
@@ -69,7 +95,11 @@ const Services = () => {
               Contract Negotiation
             </p>
           </div>
-          <div className="text-center mx-auto">
+          <div
+            data-aos="fade-right"
+            data-aos-anchor-placement="top-bottom"
+            className="text-center mx-auto"
+          >
             <img
               className="h-24 mx-auto"
               src={Property_Inspections}

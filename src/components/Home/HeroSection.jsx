@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
-import Architectural_Rendering from "./../../../public/Images/Architectural_Rendering.webp";
-import Enamul_Haque from "./../../../public/Images/Enamul_Haque.webp";
-
+import Architectural_Rendering from "./../../assets/Images/Architectural_Rendering.webp";
+import Enamul_Haque from "./../../assets/Images/Enamul_Haque.webp";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const HeroSection = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -13,14 +19,13 @@ const HeroSection = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     toast.success("Message sent successfully", { position: "top-right" });
     reset();
   };
 
   return (
     <div
-      className=" relative mx-auto py-20 mb-24 bg-no-repeat bg-cover md:mt-0 mt-16"
+      className=" relative mx-auto py-32 mb-24 bg-no-repeat bg-cover md:mt-0 mt-16"
       style={{
         backgroundImage: `url(${Architectural_Rendering})`,
       }}
@@ -31,7 +36,11 @@ const HeroSection = () => {
 
         <div className="flex justify-center">
           <div className="lg:w-[520px] md:w-[500px] px-4">
-            <div className="glass bg-black relative rounded-2xl p-8 sm:p-12 shadow-lg">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="glass bg-black relative rounded-2xl p-8 sm:p-12 shadow-lg"
+            >
               <h1 className="text-white text-2xl dm-sans-font md:text-4xl font-bold mb-10">
                 Fill Out® For Your Best Real Estate Experience.
               </h1>

@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const OwnerSpeech = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div>
-      <div className="px-5 my-20 mx-auto container">
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        className="px-5 my-32 mx-auto container "
+      >
         <h1 className="text-3xl md:text-4xl text-center  font-medium font-md">
           Ontario's Premier Real Estate Professionals
         </h1>

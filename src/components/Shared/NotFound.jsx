@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const NotFound = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div>
+    <div data-aos="fade-up">
       <section className=" h-screen flex items-center justify-center md:p-16  text-gray-600">
         <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
           <div className=" text-center">

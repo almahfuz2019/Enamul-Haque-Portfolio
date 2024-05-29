@@ -1,10 +1,15 @@
 import { FaArrowRight } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import City_Development from "./../../../public/Images/City_Development.png";
+import City_Development from "./../../assets/Images/City_Development.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ForConnected = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const {
     register,
     handleSubmit,
@@ -43,7 +48,7 @@ const ForConnected = () => {
   return (
     <div>
       <div
-        className="w-full bg-gray-400 py-5 lg:py-20"
+        className="w-full bg-gray-400  py-32"
         style={{
           backgroundImage: `url(${City_Development})`,
           backgroundPosition: "center center",
@@ -52,7 +57,11 @@ const ForConnected = () => {
         }}
         alt="City Development"
       >
-        <div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          className="container flex flex-col flex-wrap content-center justify-center p-4  mx-auto md:p-10"
+        >
           <h1 className="dm-sans-font text-3xl md:text-4xl mb-6 antialiased font-semibold leading-none text-center text-white">
             Stay Connected
           </h1>
