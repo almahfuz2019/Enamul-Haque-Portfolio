@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import User_1 from "./../../assets/Images/User_1.png";
 import User_2 from "./../../assets/Images/User_2.png";
 import User_3 from "./../../assets/Images/User_3.png";
