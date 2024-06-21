@@ -23,21 +23,21 @@ const ForConnected = () => {
   const sendEmail = () => {
     emailjs
       .sendForm(
-        "service_btn6m6h",
-        "template_nkf6nfw",
+        import.meta.env.VITE_FOR_CONNECTED_SERVICE_ID,
+        import.meta.env.VITE_FOR_CONNECTED_TEMPLATE_ID,
         form.current,
-        "xggGQ3kcYwUpUESDc",
+        import.meta.env.VITE_FOR_CONNECTED_USER_ID,
       )
       .then(
         (result) => {
-          toast.success("Email sent successfully", {
+          toast.success("sent successfully", {
             position: "top-right",
           });
           console.log("SUCCESS!", result.text);
           reset();
         },
         (error) => {
-          toast.error("Email sending failed!", {
+          toast.error("sending failed!", {
             position: "top-right",
           });
           console.log("FAILED...", error.text);
@@ -79,7 +79,7 @@ const ForConnected = () => {
               <input
                 type="text"
                 defaultValue=""
-                className="rounded px-2 h-8 md:h-12 w-full"
+                className="rounded px-2 h-10 md:h-12 w-full"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {

@@ -18,8 +18,9 @@ const HeroSection = () => {
     reset,
   } = useForm();
 
+  // eslint-disable-next-line no-unused-vars
   const onSubmit = (data) => {
-    toast.success("Message sent successfully", { position: "top-right" });
+    toast.success("sent successfully", { position: "top-right" });
     reset();
   };
 
@@ -35,7 +36,7 @@ const HeroSection = () => {
         <div className="lg:block hidden"></div>
 
         <div className="flex justify-center">
-          <div className="lg:w-[520px] md:w-[500px] px-4">
+          <div className="lg:w-[520px] md:w-[500px]  px-4">
             <div
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"

@@ -1,8 +1,10 @@
+import PropTypes from "prop-types";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+
 const Blog = ({ AllBlogs }) => {
   useEffect(() => {
     AOS.init();
@@ -14,7 +16,7 @@ const Blog = ({ AllBlogs }) => {
         <div key={BlogItem.id} className="service-item">
           <article className="lg:p-5 p-3 overflow-hidden border border-gray-300 bg-white shadow-sm">
             <img
-              alt=""
+              alt={BlogItem?.title}
               src={BlogItem?.img}
               className="h-56 w-full object-cover"
             />
@@ -22,11 +24,10 @@ const Blog = ({ AllBlogs }) => {
               <p className="line-clamp-3 text-sm md:text-base text-gray-500 font-bold">
                 {BlogItem?.date}
               </p>
-              <a href="#">
-                <h3 className=" text-base md:text-2xl font-bold">
-                  {BlogItem?.title}
-                </h3>
-              </a>
+
+              <h3 className=" text-base md:text-2xl font-bold">
+                {BlogItem?.title}
+              </h3>
 
               <Link
                 to={`/blog/${BlogItem.id}`}
@@ -46,6 +47,18 @@ const Blog = ({ AllBlogs }) => {
       ))}
     </>
   );
+};
+
+// Define propTypes
+Blog.propTypes = {
+  AllBlogs: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      img: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      date: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 export default Blog;

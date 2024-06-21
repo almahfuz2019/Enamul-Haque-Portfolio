@@ -22,7 +22,6 @@ const Blogs = () => {
         ></div>
       </div>
       <AllBlogs />
-      <div className="mb-20"></div>
       <ForConnected />
     </div>
   );

@@ -5,10 +5,10 @@ import BlogDetails from "../components/Blogs/BlogDetails";
 import Contact from "../Pages/Contact/Contact";
 import Blogs from "../Pages/Blogs/Blogs";
 import About from "../Pages/About/About";
-import SellPage from "../Pages/Features/SellPage";
 import Home from "../Pages/Home/Home";
 import PreConstruction from "../components/Features/PreConstruction";
 import Buy from "../components/Features/Buy";
+import Sell from "../components/Features/Sell";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/sell",
-        element: <SellPage />,
+        element: <Sell />,
       },
       {
         path: "/pre-construction",

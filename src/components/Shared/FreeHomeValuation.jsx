@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import AOS from "aos";
@@ -34,7 +35,7 @@ const FreeHomeValuation = () => {
             to="/contact"
             className="relative flex justify-center items-center  px-8 py-3 font-medium text-white bg-primary rounded hover:bg-orange-600 outline-none ring-2 ring-offset-2 ring-orange-500 transition-transform transform hover:scale-105 shadow-md "
           >
-            Get My Home Estimate{" "}
+            Get My Home Estimate
             <span className="ml-2">
               <FaArrowRight />
             </span>

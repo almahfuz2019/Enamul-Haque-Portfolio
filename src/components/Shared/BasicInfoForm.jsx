@@ -1,38 +1,29 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { IoSearch } from "react-icons/io5";
-import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 const BasicInfoForm = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
-  const formRef = useRef();
-  const onSubmit = (data, e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_btn6m6h",
-        "YOUR_TEMPLATE_ID",
-        formRef.current,
-        "xggGQ3kcYwUpUESDc",
-      )
-      .then(
-        (result) => {
-          toast.success("Email sent successfully");
-        },
-        (error) => {
-          toast.error("Email sending failed!");
-        },
-      );
+
+  // eslint-disable-next-line no-unused-vars
+  const onSubmit = (data) => {
+    toast.success("sent successfully", {
+      position: "top-right",
+    });
+    reset();
   };
 
   return (
@@ -47,9 +38,9 @@ const BasicInfoForm = () => {
         <div
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
-          className="container px-5   mx-auto"
+          className="container px-5 mx-auto"
         >
-          <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset className="w-full mb-10">
               <label htmlFor="Search" className="hidden">
                 Search
@@ -62,7 +53,7 @@ const BasicInfoForm = () => {
                   type="search"
                   {...register("search", { required: "Search is required" })}
                   placeholder="Type Your Address"
-                  className="w-full lg:h-14 text-lg py-2 pl-12 rounded-full focus:outline-none bg-gray-100 text-gray-800 focus:bg-gray-50 focus:border-primary"
+                  className="w-full lg:h-14 text-lg py-2 pl-12 pr-4 rounded-full focus:outline-none bg-gray-100 text-gray-800 focus:bg-gray-50 focus:border-primary"
                 />
                 {errors.search && (
                   <p className="text-red-300 text-sm text-center mt-1">
@@ -159,82 +150,9 @@ const BasicInfoForm = () => {
           </form>
         </div>
       </section>
+      <Toaster />
     </div>
   );
 };
 
 export default BasicInfoForm;
-
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//   <meta charset="UTF-8">
-//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//   <style>
-//     body {
-//       font-family: Arial, sans-serif;
-//       margin: 0;
-//       padding: 0;
-//       background-color: #f4f4f4;
-//     }
-//     .container {
-//       width: 100%;
-//       max-width: 600px;
-//       margin: 0 auto;
-//       padding: 20px;
-//       background-color: #ffffff;
-//       border-radius: 10px;
-//       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-//     }
-//     .header {
-//       background-color: #4CAF50;
-//       color: #ffffff;
-//       padding: 10px 0;
-//       text-align: center;
-//       border-radius: 10px 10px 0 0;
-//     }
-//     .content {
-//       padding: 20px;
-//       text-align: left;
-//       line-height: 1.6;
-//     }
-//     .footer {
-//       padding: 10px 0;
-//       text-align: center;
-//       color: #777777;
-//       font-size: 12px;
-//     }
-//     .button {
-//       display: inline-block;
-//       padding: 10px 20px;
-//       margin-top: 20px;
-//       color: #ffffff;
-//       background-color: #4CAF50;
-//       text-decoration: none;
-//       border-radius: 5px;
-//     }
-//   </style>
-// </head>
-// <body>
-//   <div class="container">
-//     <div class="header">
-//       <h1>Basic Info Form Submission</h1>
-//     </div>
-//     <div class="content">
-//       <p>Hello,</p>
-//       <p>We have received a new form submission with the following details:</p>
-//       <ul>
-//         <li><strong>Name:</strong> {{name}}</li>
-//         <li><strong>Email:</strong> {{email}}</li>
-//         <li><strong>Phone:</strong> {{phone}}</li>
-//         <li><strong>Search Query:</strong> {{search}}</li>
-//       </ul>
-//       <p>If you have any questions, feel free to contact us.</p>
-//       <a href="#" class="button">Contact Us</a>
-//     </div>
-//     <div class="footer">
-//       <p>&copy; 2024 Your Company. All rights reserved.</p>
-//     </div>
-//   </div>
-// </body>
-// </html>

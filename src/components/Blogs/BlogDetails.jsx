@@ -9,26 +9,25 @@ import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View
 import AOS from "aos";
 import "aos/dist/aos.css";
 const ServiceDetails = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   const { id } = useParams();
   const [blog, setBlog] = useState([]);
   const [matched, setMatched] = useState({});
-
+  // load blogs
   useEffect(() => {
     fetch("/Blogs.json")
       .then((res) => res.json())
       .then((data) => setBlog(data));
   }, []);
-
+  // matching with id
   useEffect(() => {
     const matching = blog.find((item) => item?.id === parseInt(id));
     setMatched(matching);
   }, [id, blog]);
-
-  const { img, title, body } = matched || {};
+  // data destructuring
+  const { img, title, body, writer, date } = matched || {};
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div>
@@ -58,16 +57,16 @@ const ServiceDetails = () => {
               data-aos-anchor-placement="top-bottom"
               className="mx-auto w-full h-full"
               src={img}
-              alt=""
+              alt={title}
             />
           ) : (
             <div className="w-full h-screen bg-gray-700 animate-pulse"></div>
           )}
-          <div className="py-5 md:flex text-left md:justify-between">
+          <div className="py-10 md:flex text-left md:justify-between">
             <h1
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
-              className="text-2xl md:text-4xl font-bold mb-2"
+              className="text-2xl md:text-4xl font-bold mb-1"
             >
               {title}
             </h1>
@@ -79,10 +78,10 @@ const ServiceDetails = () => {
             >
               <p className="text-[#a6a6a6]  flex gap-2 items-center">
                 <FaPencil className="text-black" />
-                David Broon
+                {writer}
               </p>
               <p className="text-[#a6a6a6] flex gap-2 items-center">
-                <FaCalendarAlt className="text-black" /> October 20, 2023
+                <FaCalendarAlt className="text-black" /> {date}
               </p>
             </div>
           </div>
@@ -132,33 +131,38 @@ const ServiceDetails = () => {
           </a>
         </div>
       </div>
+      {/* related blogs without current blog  */}
       <div className="container mx-auto mb-24 px-5">
         <div
           data-aos="fade-right"
           data-aos-anchor-placement="top-bottom"
           className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
         >
-          {AllBlogs.slice(0, 3).map((BlogItem) => (
-            <div
-              key={BlogItem.id}
-              className=" shadow overflow-hidden flex justify-center items-center p-[10px] border border-gray-200 gap-3"
-            >
-              <img
-                src={BlogItem.img}
-                alt="Image 1"
-                className="h-24 w-24 bg-cover "
-              />
-              <div className="">
-                <p className=" text-gray-500 text-md">October 20, 2023</p>
-                <Link
-                  to={`/blog/${BlogItem.id}`}
-                  className="text-xl font-bold text-gray-900 hover:text-primary"
+          {AllBlogs.slice(0, 3).map(
+            (BlogItem) =>
+              // Exclude current blog from related blogs
+              BlogItem.id !== parseInt(id) && (
+                <div
+                  key={BlogItem.id}
+                  className=" shadow overflow-hidden flex justify-center items-center p-[10px] border border-gray-200 gap-3"
                 >
-                  {BlogItem.title}
-                </Link>
-              </div>
-            </div>
-          ))}
+                  <img
+                    src={BlogItem.img}
+                    alt="Blog Image"
+                    className="h-24 w-24 bg-cover"
+                  />
+                  <div className="">
+                    <p className=" text-gray-500 text-md">October 20, 2023</p>
+                    <Link
+                      to={`/blog/${BlogItem.id}`}
+                      className="text-xl font-bold text-gray-900 hover:text-primary"
+                    >
+                      {BlogItem.title}
+                    </Link>
+                  </div>
+                </div>
+              ),
+          )}
         </div>
       </div>
     </div>

@@ -22,21 +22,21 @@ const ContactForm = () => {
   const sendEmail = (formData) => {
     emailjs
       .sendForm(
-        "service_btn6m6h",
-        "template_eh4il8r",
+        import.meta.env.VITE_CONTACT_FORM_SERVICE_ID,
+        import.meta.env.VITE_CONTACT_FORM_TEMPLATE_ID,
         form.current,
-        "xggGQ3kcYwUpUESDc",
+        import.meta.env.VITE_CONTACT_FORM_USER_ID,
       )
       .then(
         (result) => {
-          toast.success("Email sent successfully", {
+          toast.success("sent successfully", {
             position: "top-right",
           });
 
           reset();
         },
         (error) => {
-          toast.error("Email sending failed!", {
+          toast.error("sending failed!", {
             position: "top-right",
           });
         },
