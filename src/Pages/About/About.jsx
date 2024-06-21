@@ -13,7 +13,7 @@ const About = () => {
             <img
               src={Modern_Skyscrapers}
               alt="Modern skyscrapers with glass facades reflecting the sky"
-              className="w-full h-52 lg:h-[500px] "
+              className="w-full  h-52 lg:h-[500px]  "
             />
             <div
               data-aos="fade-up"

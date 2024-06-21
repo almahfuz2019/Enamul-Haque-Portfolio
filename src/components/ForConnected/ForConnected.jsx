@@ -48,10 +48,10 @@ const ForConnected = () => {
   return (
     <div>
       <div
-        className="w-full bg-gray-400  py-32"
+        className="w-full bg-gray-400  py-32 bg-fixed"
         style={{
           backgroundImage: `url(${City_Development})`,
-          backgroundPosition: "center center",
+          backgroundPosition: "center center ",
           backgroundBlendMode: "multiply",
           backgroundSize: "cover",
         }}

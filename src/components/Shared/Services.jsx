@@ -56,27 +56,27 @@ const Services = () => {
   return (
     <div>
       <div
-        className="bg-center bg-black bg-cover py-32"
+        className="bg-center bg-black bg-cover py-32 bg-fixed"
         style={{ backgroundImage: `url(${A_man_is_writing})` }}
         alt="A man is writing"
       >
         <h1 className="text-center text-white text-3xl dm-sans-font md:text-4xl mb-16">
           Services
         </h1>
-        <div className="grid grid-cols-2 gap-4  md:grid-cols-3 gap-y-20 mx-auto px-5 dm-sans-font">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 gap-y-20 mx-auto px-5 dm-sans-font">
           {services.map((service, index) => (
             <div
               key={index}
               data-aos={service.aos}
               data-aos-anchor-placement="top-bottom"
-              className="text-center mx-auto"
+              className="text-center mx-auto transform transition-transform duration-300 group hover:scale-105"
             >
               <img
-                className="h-24 mx-auto"
+                className="h-24 mx-auto transform transition-transform duration-300 group-hover:scale-110"
                 src={service.img}
                 alt={service.alt}
               />
-              <p className="text-white mt-5 text-base md:text-2xl dm-sans-font">
+              <p className="text-white mt-5 text-base md:text-2xl dm-sans-font transition-colors duration-300 group-hover:text-primary">
                 {service.text}
               </p>
             </div>

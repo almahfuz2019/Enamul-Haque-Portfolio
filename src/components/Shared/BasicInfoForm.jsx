@@ -28,7 +28,7 @@ const BasicInfoForm = () => {
 
   return (
     <div
-      className="bg-center py-32"
+      className="bg-center py-32 bg-fixed"
       style={{
         backgroundImage: `url(${Cityscape_Skyline_View})`,
       }}
