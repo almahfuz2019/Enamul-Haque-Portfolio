@@ -6,20 +6,25 @@ import toast, { Toaster } from "react-hot-toast";
 import City_Development from "./../../assets/Images/City_Development.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 const ForConnected = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
+
   const form = useRef();
+
   const onSubmit = (data) => {
-    sendEmail(data.email);
+    sendEmail(data.email); // Call sendEmail function when form is submitted
   };
+
   const sendEmail = () => {
     emailjs
       .sendForm(
@@ -30,17 +35,12 @@ const ForConnected = () => {
       )
       .then(
         (result) => {
-          toast.success("sent successfully", {
-            position: "top-right",
-          });
-          console.log("SUCCESS!", result.text);
-          reset();
+          toast.success("Sent successfully", { position: "top-right" });
+
+          reset(); // Reset form fields after successful submission
         },
         (error) => {
-          toast.error("sending failed!", {
-            position: "top-right",
-          });
-          console.log("FAILED...", error.text);
+          toast.error("Sending failed!", { position: "top-right" });
         },
       );
   };
@@ -48,10 +48,10 @@ const ForConnected = () => {
   return (
     <div>
       <div
-        className="w-full bg-gray-400  py-32 bg-fixed"
+        className="w-full bg-gray-400 py-32 bg-fixed"
         style={{
           backgroundImage: `url(${City_Development})`,
-          backgroundPosition: "center center ",
+          backgroundPosition: "center center",
           backgroundBlendMode: "multiply",
           backgroundSize: "cover",
         }}
@@ -60,7 +60,7 @@ const ForConnected = () => {
         <div
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
-          className="container flex flex-col flex-wrap content-center justify-center p-4  mx-auto md:p-10"
+          className="container flex flex-col flex-wrap content-center justify-center p-4 mx-auto md:p-10"
         >
           <h1 className="dm-sans-font text-3xl md:text-4xl mb-6 antialiased font-semibold leading-none text-center text-white">
             Stay Connected
@@ -72,7 +72,7 @@ const ForConnected = () => {
 
           <div>
             <form
-              className="flex  justify-center items-center flex-row mx-[10%]"
+              className="flex justify-center items-center flex-row mx-[10%]"
               onSubmit={handleSubmit(onSubmit)}
               ref={form}
             >
@@ -91,13 +91,13 @@ const ForConnected = () => {
               />
               <button
                 type="submit"
-                className="ml-2 p-3 md:p-4 font-semibold rounded-full h-10 md:h-12 md:w-12  w-10 border text-gray-50 hover:bg-primary flex items-center justify-center"
+                className="ml-2 p-3 md:p-4 font-semibold rounded-full h-10 md:h-12 md:w-12 w-10 border text-gray-50 hover:bg-primary flex items-center justify-center"
               >
                 <FaArrowRight />
               </button>
             </form>
             {errors.email && (
-              <p className="text-red-300 text-center text-sm mt-2  block">
+              <p className="text-red-300 text-center text-sm mt-2 block">
                 {errors.email.message}
               </p>
             )}

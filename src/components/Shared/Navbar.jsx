@@ -1,28 +1,38 @@
 import { useState } from "react";
 import { IoCall } from "react-icons/io5";
-import logo from "../../assets/Images/Navbar Logo.png";
+import logo from "../../assets/Images/Logo/Navbar Logo.png";
 import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  // Function to toggle the mobile menu
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-  const navItemStyle = `text-xl tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 dm-sans-font`;
+
+  // Style for navigation items
+  const navItemStyle =
+    "text-xl tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 dm-sans-font";
+
   return (
     <div>
       {/* Navbar Top */}
       <div className="bg-black py-3">
         <div className="flex justify-between mx-4 md:px-20">
+          {/* Left section */}
           <div className="hidden md:block md:w-1/3"></div>
-          <div className="md:flex justify-center w-full  md:w-1/3">
+
+          {/* Middle section */}
+          <div className="md:flex justify-center w-full md:w-1/3">
             <Link
               to="/contact"
-              className="inline-black rounded-full px-5 py-1 border-2 border-white text-[12px]  md:text-md  text-white    focus:ring dm-sans-font"
+              className="inline-black rounded-full px-5 py-1 border-2 border-white text-[12px] md:text-md text-white focus:ring dm-sans-font"
             >
-              Free Home Evalution
+              Free Home Evaluation
             </Link>
           </div>
+
+          {/* Right section */}
           <div className="flex justify-end w-full md:w-1/3">
             <a
               href="tel:416-742-8000"
@@ -33,11 +43,13 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* Navbar for Desktop  */}
-      <div className=" mx-auto">
-        <div className="px-4  mx-auto py-3 md:block hidden">
-          <div className=" flex items-center justify-between lg:justify-center lg:space-x-16 ">
-            <ul className="  items-center hidden space-x-8 md:flex">
+
+      {/* Navbar for Desktop */}
+      <div className="mx-auto">
+        <div className="px-4 mx-auto py-3 md:block hidden">
+          <div className="flex items-center justify-between lg:justify-center lg:space-x-16">
+            {/* Left navigation items */}
+            <ul className="items-center hidden space-x-8 md:flex">
               <li>
                 <NavLink
                   to="/buy"
@@ -69,6 +81,8 @@ export const Navbar = () => {
                 </NavLink>
               </li>
             </ul>
+
+            {/* Logo */}
             <Link
               to="/"
               aria-label="Logo"
@@ -77,7 +91,9 @@ export const Navbar = () => {
             >
               <img src={logo} alt="Enamul Haque Website Logo" />
             </Link>
-            <ul className=" items-center hidden space-x-8 md:flex">
+
+            {/* Right navigation items */}
+            <ul className="items-center hidden space-x-8 md:flex">
               <li>
                 <NavLink
                   to="/about"
@@ -111,10 +127,12 @@ export const Navbar = () => {
             </ul>
           </div>
         </div>
-        {/*Navbar for Tab and phone  */}
-        <nav className="bg-white block shadow md:hidden absolute left-0 right-0 z-50 ">
-          <div className="max-w-7xl  mx-auto shadow px-4 sm:px-6 lg:px-8">
+
+        {/* Navbar for Tablet and Phone */}
+        <nav className="bg-white block shadow md:hidden absolute left-0 right-0 z-50">
+          <div className="max-w-7xl mx-auto shadow px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
+              {/* Logo */}
               <div className="flex-shrink-0">
                 <Link to="/" className="flex items-center font-bold">
                   <img
@@ -125,6 +143,7 @@ export const Navbar = () => {
                 </Link>
               </div>
 
+              {/* Mobile menu toggle button */}
               <div className="-mr-2 flex lg:hidden">
                 <button
                   onClick={toggleNavbar}
@@ -134,6 +153,7 @@ export const Navbar = () => {
                   aria-expanded={isOpen}
                 >
                   <span className="sr-only">Open main menu</span>
+                  {/* Hamburger menu icon */}
                   <svg
                     className={`${isOpen ? "hidden" : "block"} h-6 w-6`}
                     xmlns="http://www.w3.org/2000/svg"
@@ -149,6 +169,7 @@ export const Navbar = () => {
                       d="M4 6h16M4 12h16M4 18h16"
                     />
                   </svg>
+                  {/* Close menu icon */}
                   <svg
                     className={`${isOpen ? "block" : "hidden"} h-6 w-6`}
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,13 +190,15 @@ export const Navbar = () => {
             </div>
           </div>
 
+          {/* Mobile menu */}
           <div
             className={`transform transition-all duration-300 ease-in-out ${
               isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
             } overflow-hidden md:hidden`}
             id="mobile-menu"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {/* Mobile menu items */}
               <NavLink
                 exact
                 to="/"

@@ -11,6 +11,7 @@ import Due_Diligence from "./../../assets/Images/Icons/Due_Diligence.jpg";
 import Post_Closing_Support from "./../../assets/Images/Icons/Post_Closing_Support.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 
 const Buy = () => {
   useEffect(() => {
@@ -18,17 +19,15 @@ const Buy = () => {
   }, []);
 
   // Define process steps in an array of objects
-  const processSteps = [
+  const features = [
     {
       icon: Initial_Consultation,
       title: "Initial Consultation",
-
       animation: "fade-left",
     },
     {
       icon: Assess_Qualifications,
       title: "Assess Qualifications",
-
       animation: "fade-left",
     },
     {
@@ -60,10 +59,19 @@ const Buy = () => {
 
   return (
     <div className="overflow-hidden">
+      {/* Set document head */}
+      <Helmet>
+        <title>Buy</title>
+        <meta
+          name="description"
+          content="Welcome to our home page where you can find all the information you need."
+        />
+        <meta name="keywords" content="home, services, blog, testimonials" />
+      </Helmet>
       <div
         className="bg-center mt-16 md:mt-0 bg-cover py-32 mb-24"
         style={{
-          backgroundImage: `url(${Cityscape_Skyline_View})`,
+          backgroundImage: `url(${Cityscape_Skyline_View})`, // Background image for hero section
         }}
       >
         <h1
@@ -77,6 +85,7 @@ const Buy = () => {
           className="bg-primary mx-auto h-1 w-32 md:w-44 mt-5"
         ></div>
       </div>
+      {/* Process Section */}
       <div className="container mx-auto pb-32">
         <h1
           data-aos="fade-up"
@@ -86,25 +95,27 @@ const Buy = () => {
           Our Process
         </h1>
         <div className="grid md:grid-cols-6 grid-cols-2 lg:grid-cols-7 gap-4">
-          {processSteps.map((step, index) => (
+          {/* Mapping through processSteps to display each step */}
+          {features.map((feature, index) => (
             <div
               key={index}
-              data-aos={step.animation}
+              data-aos={feature.animation}
               data-aos-anchor-placement="top-bottom"
               className="mx-auto"
             >
               <img
                 className="h-16 w-16 mx-auto mb-4"
-                src={step.icon}
-                alt={step.title}
+                src={feature.icon}
+                alt={feature.title}
               />
               <p className="text-center text-base font-medium">
-                {`${index + 1}. ${step.title}`}
+                {`${index + 1}. ${feature.title}`}{" "}
               </p>
             </div>
           ))}
         </div>
       </div>
+      {/* Additional Components */}
       <BasicFeatures />
       <BasicInfoForm />
     </div>

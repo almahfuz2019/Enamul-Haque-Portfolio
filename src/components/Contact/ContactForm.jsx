@@ -19,6 +19,7 @@ const ContactForm = () => {
   const onSubmit = (data) => {
     sendEmail(data);
   };
+  // send Email by  emailJs Package 
   const sendEmail = (formData) => {
     emailjs
       .sendForm(
@@ -70,6 +71,7 @@ const ContactForm = () => {
             ></div>
           </div>
           <div className="mx-auto mt-20">
+            {/* Contact Form Section */}
             <form onSubmit={handleSubmit(onSubmit)} ref={form}>
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-full lg:w-1/2 md:mt-5">

@@ -4,18 +4,20 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+
 const FreeHomeValuation = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init(); 
   }, []);
+
   return (
     <div>
       <div
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
-        className="  mt-10 mb-32 container mx-auto px-5"
+        className="mt-10 mb-32 container mx-auto px-5"
       >
-        <p className="text-primary  text-center text-sm md:text-xl mb-1 md:mb-5">
+        <p className="text-primary text-center text-sm md:text-xl mb-1 md:mb-5">
           Receive Your Instant Free Home Valuation
         </p>
         <h1 className="text-3xl md:text-4xl text-center dm-sans-font font-medium font-md">
@@ -30,10 +32,12 @@ const FreeHomeValuation = () => {
           straightforward form, and we'll provide you with a cost-free home
           assessment.
         </p>
+
+        {/* Button */}
         <div className="flex justify-center">
           <Link
             to="/contact"
-            className="relative flex justify-center items-center  px-8 py-3 font-medium text-white bg-primary rounded hover:bg-orange-600 outline-none ring-2 ring-offset-2 ring-orange-500 transition-transform transform hover:scale-105 shadow-md "
+            className="relative flex justify-center items-center px-8 py-3 font-medium text-white bg-primary rounded hover:bg-orange-600 outline-none ring-2 ring-offset-2 ring-orange-500 transition-transform transform hover:scale-105 shadow-md"
           >
             Get My Home Estimate
             <span className="ml-2">

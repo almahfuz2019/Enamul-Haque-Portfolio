@@ -37,3 +37,7 @@ body {
 .slick-dots {
   margin-bottom: -2%;
 }
+
+html {
+  scroll-behavior: smooth;
+}

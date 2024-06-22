@@ -40,6 +40,7 @@ const BasicInfoForm = () => {
           data-aos-anchor-placement="top-bottom"
           className="container px-5 mx-auto"
         >
+          {/* form  */}
           <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset className="w-full mb-10">
               <label htmlFor="Search" className="hidden">

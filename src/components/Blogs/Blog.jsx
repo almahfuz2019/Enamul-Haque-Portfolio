@@ -12,6 +12,7 @@ const Blog = ({ AllBlogs }) => {
 
   return (
     <>
+      {/* Map through AllBlogs array and render each blog item */}
       {AllBlogs.map((BlogItem) => (
         <div key={BlogItem.id} className="service-item">
           <article className="lg:p-5 p-3 overflow-hidden border border-gray-300 bg-white shadow-sm">
@@ -25,13 +26,15 @@ const Blog = ({ AllBlogs }) => {
                 {BlogItem?.date}
               </p>
 
-              <h3 className=" text-base md:text-2xl font-bold">
+              <h3 className="text-base md:text-2xl font-bold">
                 {BlogItem?.title}
               </h3>
 
               <Link
-                to={`/blog/${BlogItem.id}`}
-                className="group mt-4 flex items-center  gap-1 text-base md:text-xl font-medium text-primary"
+                to={`/blog/${BlogItem.title
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}`}
+                className="group mt-4 flex items-center gap-1 text-base md:text-xl font-medium text-primary"
               >
                 Read More
                 <span
@@ -49,7 +52,7 @@ const Blog = ({ AllBlogs }) => {
   );
 };
 
-// Define propTypes
+// PropTypes validation for AllBlogs prop
 Blog.propTypes = {
   AllBlogs: PropTypes.arrayOf(
     PropTypes.shape({

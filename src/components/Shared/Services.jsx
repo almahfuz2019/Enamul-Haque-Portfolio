@@ -9,6 +9,7 @@ import Home_Staging from "./../../assets/Images/Icons/Home_Staging.webp";
 import Property_Marketing from "./../../assets/Images/Icons/Property_Marketing.webp";
 import A_man_is_writing from "./../../assets/Images/A_man_is_writing.png";
 
+// Define service data with icons, alt text, text content, and AOS animation types
 const services = [
   {
     img: Property_Valuation,
@@ -63,7 +64,9 @@ const Services = () => {
         <h1 className="text-center text-white text-3xl dm-sans-font md:text-4xl mb-16">
           Services
         </h1>
+
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 gap-y-20 mx-auto px-5 dm-sans-font">
+          {/* Mapping through services to render each service item */}
           {services.map((service, index) => (
             <div
               key={index}

@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Helmet } from "react-helmet-async";
 import ForConnected from "../../components/ForConnected/ForConnected";
 import OwnerSpeech from "../../components/Shared/OwnerSpeech";
 import Services from "../../components/Shared/Services";
@@ -7,6 +8,16 @@ import Modern_Skyscrapers from "./../../assets/Images/Modern_Skyscrapers.png";
 const About = () => {
   return (
     <div className="overflow-hidden">
+      {/* Set document head */}
+      <Helmet>
+        <title>About </title>
+        <meta
+          name="description"
+          content="Welcome to our home page where you can find all the information you need."
+        />
+        <meta name="keywords" content="home, services, blog, testimonials" />
+      </Helmet>
+      {/* Header section with image */}
       <div className=" mx-auto ">
         <div className=" mx-auto ">
           <div className="flex flex-col justify-center items-center  mx-auto overflow-hidden mt-16 md:mt-0 ">
@@ -51,8 +62,10 @@ const About = () => {
             className=" bg-primary mx-auto h-1 w-80 "
           ></div>
 
+          {/* Why Choose Enam Component */}
           <WhyChooseEnam />
         </div>
+        {/* Additional Components */}
         <OwnerSpeech />
         <Services />
         <ForConnected />

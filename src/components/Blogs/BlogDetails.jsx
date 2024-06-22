@@ -8,31 +8,70 @@ import { TbSquareLetterXFilled } from "react-icons/tb";
 import Cityscape_Skyline_View from "./../../assets/Images/Cityscape_Skyline_View.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
+
 const ServiceDetails = () => {
-  const { id } = useParams();
+  const { title } = useParams(); // Change id to title
   const [blog, setBlog] = useState([]);
   const [matched, setMatched] = useState({});
-  // load blogs
+
+  // Load blogs data from JSON file
   useEffect(() => {
     fetch("/Blogs.json")
       .then((res) => res.json())
       .then((data) => setBlog(data));
   }, []);
-  // matching with id
+
+  // Match blog with the title from URL parameters
   useEffect(() => {
-    const matching = blog.find((item) => item?.id === parseInt(id));
+    const matching = blog.find(
+      (item) =>
+        item?.title.replace(/\s+/g, "-").toLowerCase() === title.toLowerCase(),
+    );
     setMatched(matching);
-  }, [id, blog]);
-  // data destructuring
-  const { img, title, body, writer, date } = matched || {};
+  }, [title, blog]);
+
+  // Destructure blog data
+  const { img, title: blogTitle, body, writer, date,id } = matched || {};
+
   useEffect(() => {
     AOS.init();
   }, []);
 
+  // Function to generate share URLs
+  const generateShareUrl = (platform) => {
+    const blogUrl = window.location.href;
+    const encodedTitle = encodeURIComponent(blogTitle);
+    const encodedUrl = encodeURIComponent(blogUrl);
+
+    switch (platform) {
+      case "x":
+        return `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+      case "facebook":
+        return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+      case "linkedin":
+        return `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+      case "instagram":
+        // Note: Instagram doesn't support direct URL sharing via web. Users need to share manually.
+        return "https://www.instagram.com/";
+      default:
+        return "#";
+    }
+  };
+
   return (
     <div>
+      {/* Set document head */}
+      <Helmet>
+        <title>{blogTitle}</title>
+        <meta
+          name="description"
+          content="Welcome to our home page where you can find all the information you need."
+        />
+        <meta name="keywords" content="home, services, blog, testimonials" />
+      </Helmet>
       <div
-        className=" bg-center py-32 mb-32"
+        className="bg-center py-32 mb-32"
         style={{
           backgroundImage: `url(${Cityscape_Skyline_View})`,
         }}
@@ -40,35 +79,39 @@ const ServiceDetails = () => {
       >
         <h1
           data-aos="zoom-in"
-          className="text-center  text-3xl md:text-5xl font-bold text-white"
+          className="text-center text-3xl md:text-5xl font-bold text-white"
         >
           Recent News & Blogs
         </h1>
         <div
           data-aos="zoom-out"
-          className=" bg-primary mx-auto h-1 w-80 mt-5"
+          className="bg-primary mx-auto h-1 w-80 mt-5"
         ></div>
       </div>
-      <div className="container mx-auto  px-4 text-center my-20">
-        <div className=" mx-auto ">
+
+      {/* Main content */}
+      <div className="container mx-auto px-4 text-center my-20">
+        <div className="mx-auto">
           {img ? (
             <img
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
               className="mx-auto w-full h-full"
               src={img}
-              alt={title}
+              alt={blogTitle}
             />
           ) : (
             <div className="w-full h-screen bg-gray-700 animate-pulse"></div>
           )}
+
+          {/* Blog details */}
           <div className="py-10 md:flex text-left md:justify-between">
             <h1
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
               className="text-2xl md:text-4xl font-bold mb-1"
             >
-              {title}
+              {blogTitle}
             </h1>
 
             <div
@@ -76,7 +119,7 @@ const ServiceDetails = () => {
               data-aos-anchor-placement="top-bottom"
               className="flex flex-col md:flex-row gap-x-4"
             >
-              <p className="text-[#a6a6a6]  flex gap-2 items-center">
+              <p className="text-[#a6a6a6] flex gap-2 items-center">
                 <FaPencil className="text-black" />
                 {writer}
               </p>
@@ -85,6 +128,7 @@ const ServiceDetails = () => {
               </p>
             </div>
           </div>
+
           <p
             data-aos="fade-up"
             data-aos-anchor-placement="top-bottom"
@@ -93,15 +137,20 @@ const ServiceDetails = () => {
           ></p>
         </div>
       </div>
+
+      {/* Share post section */}
       <div className="container mx-auto text-center mb-10">
         <p className="text-[18px] font-semibold mb-2">Share Post</p>
 
+        {/* Social media icons */}
         <div className="flex justify-center mx-auto gap-4">
           <a
             data-aos="fade-left"
             data-aos-anchor-placement="top-bottom"
             className="text-3xl text-black"
-            href="https://x.com/"
+            href={generateShareUrl("x")}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <TbSquareLetterXFilled />
           </a>
@@ -109,7 +158,9 @@ const ServiceDetails = () => {
             data-aos="fade-left"
             data-aos-anchor-placement="top-bottom"
             className="text-3xl text-black"
-            href="https://www.facebook.com/"
+            href={generateShareUrl("facebook")}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaFacebookSquare />
           </a>
@@ -117,7 +168,9 @@ const ServiceDetails = () => {
             data-aos="fade-right"
             data-aos-anchor-placement="top-bottom"
             className="text-3xl text-black"
-            href="https://www.linkedin.com/"
+            href={generateShareUrl("linkedin")}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedin />
           </a>
@@ -125,26 +178,29 @@ const ServiceDetails = () => {
             data-aos="fade-right"
             data-aos-anchor-placement="top-bottom"
             className="text-3xl text-black"
-            href="https://www.instagram.com/"
+            href={generateShareUrl("instagram")}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaSquareInstagram />
           </a>
         </div>
       </div>
-      {/* related blogs without current blog  */}
+
+      {/* Related blogs section */}
       <div className="container mx-auto mb-24 px-5">
         <div
           data-aos="fade-right"
           data-aos-anchor-placement="top-bottom"
           className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
         >
+          {/* Display related blogs, excluding current blog */}
           {AllBlogs.slice(0, 3).map(
             (BlogItem) =>
-              // Exclude current blog from related blogs
               BlogItem.id !== parseInt(id) && (
                 <div
                   key={BlogItem.id}
-                  className=" shadow overflow-hidden flex justify-center items-center p-[10px] border border-gray-200 gap-3"
+                  className="shadow overflow-hidden flex justify-center items-center p-[10px] border border-gray-200 gap-3"
                 >
                   <img
                     src={BlogItem.img}
@@ -152,9 +208,11 @@ const ServiceDetails = () => {
                     className="h-24 w-24 bg-cover"
                   />
                   <div className="">
-                    <p className=" text-gray-500 text-md">October 20, 2023</p>
+                    <p className="text-gray-500 text-md">{BlogItem.date}</p>
                     <Link
-                      to={`/blog/${BlogItem.id}`}
+                      to={`/blog/${BlogItem.title
+                        .replace(/\s+/g, "-")
+                        .toLowerCase()}`}
                       className="text-xl font-bold text-gray-900 hover:text-primary"
                     >
                       {BlogItem.title}

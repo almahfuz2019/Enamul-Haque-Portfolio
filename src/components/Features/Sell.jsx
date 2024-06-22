@@ -12,8 +12,9 @@ import Marketing_and_Promotion from "./../../assets/Images/Icons/Marketing_and_P
 import Negotiating_Offers from "./../../assets/Images/Icons/Negotiating_Offers.jpg.jpg";
 import Prepare_the_Property from "./../../assets/Images/Icons/Prepare_the_Property.jpg.jpg";
 import Pricing_Strategy from "./../../assets/Images/Icons/Pricing_Strategy.jpg.jpg";
+import { Helmet } from "react-helmet-async";
 
-const steps = [
+const features = [
   {
     id: 1,
     imgSrc: Prepare_the_Property,
@@ -72,6 +73,16 @@ const Sell = () => {
 
   return (
     <div className="overflow-hidden">
+      {/* Set document head */}
+      <Helmet>
+        <title>Sell</title>
+        <meta
+          name="description"
+          content="Welcome to our home page where you can find all the information you need."
+        />
+        <meta name="keywords" content="home, services, blog, testimonials" />
+      </Helmet>
+      {/* Hero Section */}
       <div
         className="bg-center mt-16 md:mt-0 bg-cover py-32 mb-24"
         style={{
@@ -90,6 +101,7 @@ const Sell = () => {
           className="bg-primary mx-auto h-1 w-32 md:w-44 mt-5"
         ></div>
       </div>
+      {/* Process Section */}
       <div className="container mx-auto pb-32">
         <h1
           data-aos="fade-up"
@@ -99,25 +111,26 @@ const Sell = () => {
           Our Process
         </h1>
         <div className="grid md:grid-cols-6 grid-cols-2 lg:grid-cols-7 gap-4">
-          {steps.map((step) => (
+          {features.map((feature) => (
             <div
-              key={step.id}
-              data-aos={step.animation}
+              key={feature.id}
+              data-aos={feature.animation}
               data-aos-anchor-placement="top-bottom"
               className="mx-auto"
             >
               <img
                 className="h-16 w-16 mx-auto mb-4"
-                src={step.imgSrc}
-                alt={step.altText}
+                src={feature.imgSrc}
+                alt={feature.altText}
               />
               <p className="text-center text-base font-medium">
-                {step.description}
+                {feature.description}
               </p>
             </div>
           ))}
         </div>
       </div>
+      {/* Additional Components */}
       <BasicFeatures />
       <BasicInfoForm />
     </div>

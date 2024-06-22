@@ -11,13 +11,15 @@ import Project_Updates from "./../../assets/Images/Icons/Project_Updates.jpg";
 import Closing_Coordination from "./../../assets/Images/Icons/Closing_Coordination.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 
 const PreConstruction = () => {
   useEffect(() => {
     AOS.init();
   }, []);
 
-  const processSteps = [
+  // Array defining the steps of the pre-construction process
+  const features = [
     {
       image: Client_Consultation,
       title: "Client Consultation",
@@ -65,6 +67,15 @@ const PreConstruction = () => {
 
   return (
     <div className="overflow-hidden">
+      {/* Set document head */}
+      <Helmet>
+        <title>Pre Construction </title>
+        <meta
+          name="description"
+          content="Welcome to our home page where you can find all the information you need."
+        />
+        <meta name="keywords" content="home, services, blog, testimonials" />
+      </Helmet>
       <div
         className="bg-center mt-16 md:mt-0 bg-cover py-32 mb-24"
         style={{
@@ -82,6 +93,7 @@ const PreConstruction = () => {
           className="bg-primary mx-auto h-1 w-40 md:w-80 mt-5"
         ></div>
       </div>
+      {/* Process Section */}
       <div className="container mx-auto pb-32">
         <h1
           data-aos="fade-up"
@@ -91,25 +103,27 @@ const PreConstruction = () => {
           Our Process
         </h1>
         <div className="grid md:grid-cols-6 grid-cols-2 lg:grid-cols-7 gap-4">
-          {processSteps.map((step, index) => (
+          {/* Mapping through processSteps to display each step */}
+          {features.map((feature, index) => (
             <div
               key={index}
-              data-aos={step.animation}
+              data-aos={feature.animation}
               data-aos-anchor-placement="top-bottom"
               className="mx-auto"
             >
               <img
                 className="h-16 w-16 mx-auto mb-4"
-                src={step.image}
-                alt={step.title}
+                src={feature.image}
+                alt={feature.title}
               />
               <p className="text-center text-base font-medium">
-                {`${index + 1}. ${step.title}`}
+                {`${index + 1}. ${feature.title}`}{" "}
               </p>
             </div>
           ))}
         </div>
       </div>
+      {/* Additional Components */}
       <BasicFeatures />
       <BasicInfoForm />
     </div>

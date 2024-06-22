@@ -6,7 +6,8 @@ import Outstanding_Property_Promotion from "./../../assets/Images/Outstanding_Pr
 import Ultimate_Experience_Assurance from "./../../assets/Images/Ultimate_Experience_Assurance.png";
 import Enamul_Haque from "./../../assets/Images/Enamul_Haque.webp";
 
-const sections = [
+// Define Data with images, alt text, titles, descriptive text, and AOS animation types
+const Data = [
   {
     img: Local_Expertise_And_Experience,
     alt: "Local Expertise And Experience",
@@ -44,26 +45,31 @@ const WhyChooseEnam = () => {
       >
         Why Choose <span className="font-bold">Enam</span>
       </h1>
+
       <div>
         <img
           className="h-96 lg:hidden block mx-auto mb-20"
           src={Enamul_Haque}
-          alt="At Emanul Haque, we are dedicated to providing exceptional real estate services tailored to your unique needs. Our team, led by Emanul Haque, a seasoned and trusted Canadian Realtor, is committed to delivering top-notch results for our clients.With a deep understanding of the Canadian real estate market, we take pride in guiding you through every step of your real estate journey. Whether you're buying, selling, or investing in properties, we have the expertise to make your real estate goals a reality"
+          alt="Enamul Haque - Description of services and expertise"
         />
       </div>
+
       <div className="lg:grid lg:grid-cols-3 flex flex-wrap gap-8 items-center justify-center">
-        {sections.map((section, index) => (
+        {/* Mapping through data to render each data */}
+        {Data.map((singleData, index) => (
           <div
             key={index}
-            data-aos={section.aos}
+            data-aos={singleData.aos}
             data-aos-anchor-placement="top-bottom"
             className="shadow hover:shadow-xl border px-5 py-10 lg:w-full md:w-[300px] md:h-[380px]"
           >
-            <img className="mx-auto" src={section.img} alt={section.alt} />
+            <img className="mx-auto" src={singleData.img} alt={singleData.alt} />
+
             <h2 className="text-xl md:text-2xl text-center py-5 font-semibold">
-              {section.title}
+              {singleData.title}
             </h2>
-            <p className="text-base md:text-lg text-center">{section.text}</p>
+
+            <p className="text-base md:text-lg text-center">{singleData.text}</p>
           </div>
         ))}
       </div>

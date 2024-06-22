@@ -8,11 +8,11 @@ import "aos/dist/aos.css";
 
 const BasicFeatures = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init(); 
   }, []);
 
   // Define an array of objects for the feature steps
-  const featureSteps = [
+  const features = [
     {
       icon: Address,
       title: "Enter Address",
@@ -37,22 +37,23 @@ const BasicFeatures = () => {
       <div className="bg-[#f5f5f5]">
         <div
           data-aos="fade-up"
-          className="grid grid-cols-1 md:grid-cols-3 gap-4  mx-auto py-32 container"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto py-32 container"
         >
-          {featureSteps.map((step, index) => (
+          {/* Mapping through featureSteps array to render each step */}
+          {features.map((feature, index) => (
             <div
               key={index}
-              className="block rounded-xl p-4  hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
+              className="block rounded-xl p-4 hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
               data-aos="fade-up"
             >
-              <img src={step.icon} alt={`Step ${index + 1} Icon`} />
+              <img src={feature.icon} alt={`Step ${index + 1} Icon`} />
 
-              <h2 className="mt-2 text-2xl  font-bold dm-sans-font ">
-                {`${index + 1}) ${step.title}`}
+              <h2 className="mt-2 text-2xl font-bold dm-sans-font">
+                {`${index + 1}) ${feature.title}`}
               </h2>
 
               <p className="sm:mt-1 sm:block text-lg sm:text-gray-600">
-                {step.description}
+                {feature.description}
               </p>
             </div>
           ))}

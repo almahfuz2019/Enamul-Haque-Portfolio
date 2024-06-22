@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import Slider from "react-slick";
-import User_1 from "./../../assets/Images/User_1.png";
-import User_2 from "./../../assets/Images/User_2.png";
-import User_3 from "./../../assets/Images/User_3.png";
+import User_1 from "./../../assets/Images/Users/User_1.png";
+import User_2 from "./../../assets/Images/Users/User_2.png";
+import User_3 from "./../../assets/Images/Users/User_3.png";
 import star from "./../../assets/Images/Icons/Star.svg";
 import Aos from "aos";
 
-const testimonials = [
+const testimonialsData = [
   {
     id: 1,
     name: "John Willy",
@@ -104,13 +104,14 @@ function CustomArrows() {
     Aos.init();
   }, []);
 
+  // Settings for the Slider component
   const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 4,
-    initialSlide: 0,
+    dots: true, // Show dots navigation
+    infinite: false, // Disable infinite scrolling
+    speed: 500, // Transition speed
+    slidesToShow: 3, // Number of slides visible at once
+    slidesToScroll: 4, // Number of slides to scroll
+    initialSlide: 0, // Initial slide index
     responsive: [
       {
         breakpoint: 1024,
@@ -140,7 +141,7 @@ function CustomArrows() {
   };
 
   return (
-    <div className="container margin-bottom-testimonial px-3 overflow-hidden mx-auto pt-32  pb-32 dm-sans-font">
+    <div className="container margin-bottom-testimonial px-3 overflow-hidden mx-auto pt-32 pb-32 dm-sans-font">
       <h1
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
@@ -153,25 +154,27 @@ function CustomArrows() {
         data-aos-anchor-placement="top-bottom"
         className="slider-container px-2 mx-auto"
       >
+        {/* Slider component with settings */}
         <Slider {...settings} className="">
-          {testimonials.map((testimonial) => (
+          {testimonialsData.map((data) => (
             <div
-              key={testimonial.id}
+              key={data.id}
               className="border rounded-lg p-3 md:p-10 w-full"
             >
               <div className="flex gap-4">
                 <img
                   className="h-16 w-16"
-                  src={testimonial.image}
-                  alt={testimonial.name}
+                  src={data.image}
+                  alt={data.name}
                 />
                 <div>
-                  <p className="font-bold text-xl">{testimonial.name}</p>
-                  <p className="text-md">{testimonial.location}</p>
+                  <p className="font-bold text-xl">{data.name}</p>
+                  <p className="text-md">{data.location}</p>
                 </div>
               </div>
               <div className="flex my-4">
-                {Array.from({ length: testimonial.rating }).map((_, index) => (
+                {/* Display star rating based on testimonial.rating */}
+                {Array.from({ length: data.rating }).map((_, index) => (
                   <img
                     key={index}
                     className="h-5 w-5"
@@ -180,7 +183,7 @@ function CustomArrows() {
                   />
                 ))}
               </div>
-              <p className="text-[#8A8D9B] text-md">{testimonial.feedback}</p>
+              <p className="text-[#8A8D9B] text-md">{data.feedback}</p>
             </div>
           ))}
         </Slider>
