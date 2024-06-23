@@ -32,7 +32,7 @@ const ServiceDetails = () => {
   }, [title, blog]);
 
   // Destructure blog data
-  const { img, title: blogTitle, body, writer, date,id } = matched || {};
+  const { img, title: blogTitle, body, writer, date, id } = matched || {};
 
   useEffect(() => {
     AOS.init();
@@ -64,11 +64,6 @@ const ServiceDetails = () => {
       {/* Set document head */}
       <Helmet>
         <title>{blogTitle}</title>
-        <meta
-          name="description"
-          content="Welcome to our home page where you can find all the information you need."
-        />
-        <meta name="keywords" content="home, services, blog, testimonials" />
       </Helmet>
       <div
         className="bg-center py-32 mb-32"

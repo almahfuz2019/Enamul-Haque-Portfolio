@@ -11,11 +11,6 @@ const About = () => {
       {/* Set document head */}
       <Helmet>
         <title>About </title>
-        <meta
-          name="description"
-          content="Welcome to our home page where you can find all the information you need."
-        />
-        <meta name="keywords" content="home, services, blog, testimonials" />
       </Helmet>
       {/* Header section with image */}
       <div className=" mx-auto ">

@@ -70,11 +70,6 @@ const PreConstruction = () => {
       {/* Set document head */}
       <Helmet>
         <title>Pre Construction </title>
-        <meta
-          name="description"
-          content="Welcome to our home page where you can find all the information you need."
-        />
-        <meta name="keywords" content="home, services, blog, testimonials" />
       </Helmet>
       <div
         className="bg-center mt-16 md:mt-0 bg-cover py-32 mb-24"
