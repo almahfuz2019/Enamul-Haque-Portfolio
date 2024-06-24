@@ -12,7 +12,8 @@ const Footer = () => {
   useEffect(() => {
     AOS.init();
   }, []);
-
+  // get year
+  const getCurrentYear = () => new Date().getFullYear();
   return (
     <footer className="footer footer-center pt-32 pb-10 bg-black text-white">
       {/* Logo */}
@@ -118,7 +119,7 @@ const Footer = () => {
 
       {/* Footer Information */}
       <aside className="flex lg:gap-20 gap-5 -mt-6 text-sm md:text-base">
-        <p>© copyright Enamul Haque 2024</p>
+        <p>© copyright Enamul Haque {getCurrentYear}</p>
         <p>
           Powered by- <Link to="https://techplato.com/">TechPlato, inc.</Link>
         </p>
